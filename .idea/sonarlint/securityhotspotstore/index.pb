@@ -13,5 +13,3 @@ D
 src/Epic.java,2\b\2b84a0a14af27d1f1130a627b5e77dcfe54fa918
 B
 src/TaskState.java,c\1\c1a5925f26c4d6d9e62cb3ffc46198f3cadbd336
-A
-src/TaskType.java,3\8\384d8477d889eeeebc5032e45e181eb7ef788700
