@@ -1,0 +1,11 @@
+
+”
+java:S1319"rThe type of "includeSubtaskList" should be an interface such as "List" rather than the implementation "ArrayList".(È¸¯Âşÿÿÿÿ8É¾¥Ì1
+
+java:S1319"rThe type of "includeSubtaskList" should be an interface such as "List" rather than the implementation "ArrayList".(ÜŒík8É¾¥Ì1
+€
+java:S1104"^Make includeSubtaskList a static final constant or non-public and provide accessors if needed.(È¸¯Âşÿÿÿÿ8É¾¥Ì1
+7
+java:S1220""Move this file to a named package.8É¾¥Ì1
+H
+java:S2160"+Override the "equals" method in this class.(‡¢ÉÎ8Ù¾¥Ì1

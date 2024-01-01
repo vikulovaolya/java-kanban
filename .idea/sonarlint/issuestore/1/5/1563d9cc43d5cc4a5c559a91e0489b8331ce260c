@@ -1,0 +1,11 @@
+
+p
+java:S1104"NMake id a static final constant or non-public and provide accessors if needed.(ÍéÌ‘øÿÿÿÿ8ÇÂ£Ì1
+m
+java:S1104"PMake name a static final constant or non-public and provide accessors if needed.( şÍ¾8×Â£Ì1
+y
+java:S1104"WMake description a static final constant or non-public and provide accessors if needed.(¹ÿ†ğÿÿÿÿÿ8çÂ£Ì1
+n
+java:S1104"QMake state a static final constant or non-public and provide accessors if needed.(Ğ±ê8÷Â£Ì1
+7
+java:S1220""Move this file to a named package.8‡Ã£Ì1

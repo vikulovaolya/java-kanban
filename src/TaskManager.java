@@ -9,45 +9,46 @@ public class TaskManager {
     public static HashMap <Integer, Subtask> subtaskList = new HashMap<>();
     public static  HashMap <Integer, Epic> epicList = new HashMap<>();
 
-    private static void countId (){
+    private static int getCountId (){
         counterId += 1;
+        return  counterId;
     }
 
     public static Task setTask(String name, String description, TaskState state){
-        countId();
-        Task task = new Task(counterId, name, description, state);
-        taskList.put(counterId, task);
-        return taskList.get(counterId);
+        int taskId = getCountId();
+        Task task = new Task(taskId, name, description, state);
+        taskList.put(taskId, task);
+        return taskList.get(taskId);
     }
 
     public static Subtask setSubtask(String name, String description, TaskState state, int epicId) {
-        countId();
-        Subtask subtask = new Subtask(counterId, name, description, state, epicId);
-        subtaskList.put(counterId, subtask);
+        int taskId = getCountId();
+        Subtask subtask = new Subtask(taskId, name, description, state, epicId);
+        subtaskList.put(taskId, subtask);
         ArrayList<Integer> arrayOfSubtasksForEpic = epicList.get(epicId).includeSubtaskList;
         if (arrayOfSubtasksForEpic != null) {
-            arrayOfSubtasksForEpic.add(counterId);
+            arrayOfSubtasksForEpic.add(taskId);
         } else {
             ArrayList<Integer> newArrayOfSubtasksForEpic = new ArrayList<>();
-            newArrayOfSubtasksForEpic.add(counterId);
+            newArrayOfSubtasksForEpic.add(taskId);
             epicList.get(epicId).includeSubtaskList = newArrayOfSubtasksForEpic;
         }
         updateEpic(epicId, epicList.get(epicId).name, epicList.get(epicId).description,
                 epicList.get(epicId).includeSubtaskList);
-        return subtaskList.get(counterId);
+        return subtaskList.get(taskId);
     }
 
     public static Epic setEpic(String name, String description, ArrayList<Integer> includeSubtaskList) {
-        countId();
+        int taskId = getCountId();
         TaskState state = getEpicState(includeSubtaskList);
-        Epic epic = new Epic(counterId, name, description, state, includeSubtaskList);
-        epicList.put(counterId, epic);
+        Epic epic = new Epic(taskId, name, description, state, includeSubtaskList);
+        epicList.put(taskId, epic);
         if (includeSubtaskList != null){
             for (int subtaskId: includeSubtaskList){
-                subtaskList.get(subtaskId).epicId = counterId;
+                subtaskList.get(subtaskId).epicId = taskId;
             }
         }
-        return epicList.get(counterId);
+        return epicList.get(taskId);
     }
 
     public static ArrayList <Subtask> getSubtaskListForEpic (int taskId) {

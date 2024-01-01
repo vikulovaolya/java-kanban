@@ -10,7 +10,7 @@ public class Main {
         int subtaskId;
         TaskState state = null;
 
-        /* Данные для быстрого тестирования
+        /* Данные для быстрого тестирования */
         TaskManager.setTask("Задача 1", "Текст задачи 1", TaskState.NEW);
         TaskManager.setTask("Задача 2", "Текст задачи 2", TaskState.IN_PROGRESS);
         TaskManager.setTask("Задача 3", "Текст задачи 3", TaskState.DONE);
@@ -40,9 +40,9 @@ public class Main {
                 TaskState.DONE, 4);
         TaskManager.updateSubtask(10,"Подзадача 10 (обновление статуса)", "Текст Подзадачи 10",
                 TaskState.NEW, 4);
-        TaskManager.clearEpicList();
-        TaskManager.clearSubtaskList();
-*/
+        //TaskManager.clearEpicList();
+        //TaskManager.clearSubtaskList();
+
 
         while (true) {
             printMenu();

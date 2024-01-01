@@ -1,0 +1,95 @@
+
+}
+java:S1192="`Define a constant instead of duplicating this literal "Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° Ğ´Ğ¾Ğ±Ğ°Ğ²Ğ»ĞµĞ½Ğ°" 4 times.(üİ·İ8ìÁ¿´Ì1
+
+java:S1192"rDefine a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ½Ğ¾Ğ²Ñ‹Ğ¹ Ñ‚ĞµĞºÑÑ‚ Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸" 3 times.(…÷½8ìÁ¿´Ì1
+ª
+java:S1192k"Define a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ id Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸, ĞºĞ¾Ñ‚Ğ¾Ñ€ÑƒÑ Ñ…Ğ¾Ñ‚Ğ¸Ñ‚Ğµ Ğ¿Ğ¾Ğ»ÑƒÑ‡Ğ¸Ñ‚ÑŒ" 3 times.(Ùñ€8ìÁ¿´Ì1
+©
+java:S1192}"‹Define a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ id Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸, ĞºĞ¾Ñ‚Ğ¾Ñ€ÑƒÑ Ñ…Ğ¾Ñ‚Ğ¸Ñ‚Ğµ ÑƒĞ´Ğ°Ğ»Ğ¸Ñ‚ÑŒ" 3 times.(ê‹ÌÚ8ìÁ¿´Ì1
+–
+java:S1192"xDefine a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ½Ğ¾Ğ²Ğ¾Ğµ Ğ½Ğ°Ğ·Ğ²Ğ°Ğ½Ğ¸Ğµ Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸" 3 times.(ÍÊ€ª8ìÁ¿´Ì1
+~
+java:S1192#"aDefine a constant instead of duplicating this literal "Ğ¢ĞµĞºÑÑ‚ ĞŸĞ¾Ğ´Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸ 10" 4 times.(—¥¶Ô8ìÁ¿´Ì1
+7
+java:S1220""Move this file to a named package.8¬˜ƒüË1
+D
+java:S2189/""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8óÃ¿´Ì1
+]	java:S125+"<This block of commented-out lines of code should be removed.(¨‹·íøÿÿÿÿ8¼ÿÁ´Ì1
+C	java:S1314""Add a default case to this switch.(¸ìù«üÿÿÿÿ8‚Ä¿´Ì1
+G	java:S1066"+Replace this use of System.out by a logger.(ù°µÔ8¿Ã Ì1
+G	java:S1067"+Replace this use of System.out by a logger.(ù°µÔ8‚Ä¿´Ì1
+G	java:S1069"+Replace this use of System.out by a logger.(ç¼£Û8‚Ä¿´Ì1
+G	java:S106="+Replace this use of System.out by a logger.(üİ·İ8‚Ä¿´Ì1
+L	java:S106@"+Replace this use of System.out by a logger.(é×ìúıÿÿÿÿ8‚Ä¿´Ì1
+G	java:S106B"+Replace this use of System.out by a logger.(–˜¦8‚Ä¿´Ì1
+G	java:S106E"+Replace this use of System.out by a logger.(Ş§Ó¡8†Ä¿´Ì1
+L	java:S106H"+Replace this use of System.out by a logger.(ÍñÀ÷ûÿÿÿÿ8†Ä¿´Ì1
+G	java:S106K"+Replace this use of System.out by a logger.(òåÄ´8‡Ä¿´Ì1
+L	java:S106M"+Replace this use of System.out by a logger.(¯®©şÿÿÿÿ8‡Ä¿´Ì1
+L	java:S106P"+Replace this use of System.out by a logger.(úòÆ¼ûÿÿÿÿ8‡Ä¿´Ì1
+L	java:S106S"+Replace this use of System.out by a logger.(°ˆÑéûÿÿÿÿ8‡Ä¿´Ì1
+G	java:S106T"+Replace this use of System.out by a logger.(ëõÓÃ8‡Ä¿´Ì1
+L	java:S106W"+Replace this use of System.out by a logger.(¬è­şşÿÿÿÿ8‡Ä¿´Ì1
+G	java:S106X"+Replace this use of System.out by a logger.(ş±ıÀ8‡Ä¿´Ì1
+L	java:S106["+Replace this use of System.out by a logger.(ÜÎİ×ùÿÿÿÿ8‡Ä¿´Ì1
+G	java:S106\"+Replace this use of System.out by a logger.(§Şˆé8‡Ä¿´Ì1
+W
+java:S2209_"5Change this instance-reference to a static reference.(â‰ö·ıÿÿÿÿ8ŠÄ¿´Ì1
+L	java:S106`"+Replace this use of System.out by a logger.(˜ªš˜ıÿÿÿÿ8ŠÄ¿´Ì1
+W
+java:S2209c"5Change this instance-reference to a static reference.(Øû²¼ıÿÿÿÿ8ŠÄ¿´Ì1
+F	java:S106d"+Replace this use of System.out by a logger.(œæ™?8‹Ä¿´Ì1
+W
+java:S2209g"5Change this instance-reference to a static reference.(Íé‚ıÿÿÿÿ8‹Ä¿´Ì1
+G	java:S106h"+Replace this use of System.out by a logger.(¶Ó©Ô8ŒÄ¿´Ì1
+F	java:S106k"+Replace this use of System.out by a logger.(Ùñ€8ŒÄ¿´Ì1
+R
+java:S2209m"5Change this instance-reference to a static reference.(†ÉìÒ8ŒÄ¿´Ì1
+L	java:S106n"+Replace this use of System.out by a logger.(ı®İûÿÿÿÿ8ŒÄ¿´Ì1
+W
+java:S2209n"5Change this instance-reference to a static reference.(ı®İûÿÿÿÿ8ŒÄ¿´Ì1
+F	java:S106q"+Replace this use of System.out by a logger.(Ùñ€8ŒÄ¿´Ì1
+R
+java:S2209s"5Change this instance-reference to a static reference.(Â„Íç8ŒÄ¿´Ì1
+L	java:S106t"+Replace this use of System.out by a logger.(•Ú¡“ÿÿÿÿÿ8ŒÄ¿´Ì1
+W
+java:S2209t"5Change this instance-reference to a static reference.(•Ú¡“ÿÿÿÿÿ8ŒÄ¿´Ì1
+F	java:S106w"+Replace this use of System.out by a logger.(Ùñ€8ŒÄ¿´Ì1
+R
+java:S2209y"5Change this instance-reference to a static reference.(ÁÏñ8ŒÄ¿´Ì1
+F	java:S106z"+Replace this use of System.out by a logger.(Ã°(8ŒÄ¿´Ì1
+Q
+java:S2209z"5Change this instance-reference to a static reference.(Ã°(8ŒÄ¿´Ì1
+G	java:S106}"+Replace this use of System.out by a logger.(ê‹ÌÚ8ŒÄ¿´Ì1
+R
+java:S2209"5Change this instance-reference to a static reference.(…†ìÀ8ŒÄ¿´Ì1
+H	java:S106‚"+Replace this use of System.out by a logger.(ê‹ÌÚ8ŒÄ¿´Ì1
+X
+java:S2209„"5Change this instance-reference to a static reference.(§ª»şùÿÿÿÿ8‘Ä¿´Ì1
+H	java:S106‡"+Replace this use of System.out by a logger.(ê‹ÌÚ8‘Ä¿´Ì1
+R
+java:S2209‰"5Change this instance-reference to a static reference.(‡Àûs8‘Ä¿´Ì1
+H	java:S106Œ"+Replace this use of System.out by a logger.(Æ³µ™8‘Ä¿´Ì1
+H	java:S106"+Replace this use of System.out by a logger.(ÍÊ€ª8‘Ä¿´Ì1
+H	java:S106"+Replace this use of System.out by a logger.(…÷½8‘Ä¿´Ì1
+M	java:S106’"+Replace this use of System.out by a logger.(Šè˜Õıÿÿÿÿ8‘Ä¿´Ì1
+H	java:S106•"+Replace this use of System.out by a logger.(üİ·İ8‘Ä¿´Ì1
+H	java:S106˜"+Replace this use of System.out by a logger.(ªå›8‘Ä¿´Ì1
+H	java:S106š"+Replace this use of System.out by a logger.(ÍÊ€ª8‘Ä¿´Ì1
+H	java:S106œ"+Replace this use of System.out by a logger.(…÷½8‘Ä¿´Ì1
+H	java:S106Ÿ"+Replace this use of System.out by a logger.(Ş§Ó¡8‘Ä¿´Ì1
+H	java:S106¢"+Replace this use of System.out by a logger.(üİ·İ8‘Ä¿´Ì1
+H	java:S106¥"+Replace this use of System.out by a logger.(°Ü­¸8‘Ä¿´Ì1
+H	java:S106§"+Replace this use of System.out by a logger.(ÍÊ€ª8‘Ä¿´Ì1
+H	java:S106©"+Replace this use of System.out by a logger.(…÷½8–Ä¿´Ì1
+H	java:S106«"+Replace this use of System.out by a logger.(¬ñ×8–Ä¿´Ì1
+G	java:S106¬"+Replace this use of System.out by a logger.(‹ú›+8–Ä¿´Ì1
+H	java:S106·"+Replace this use of System.out by a logger.(üİ·İ8–Ä¿´Ì1
+H	java:S106º"+Replace this use of System.out by a logger.(¢ÌÁ8–Ä¿´Ì1
+M	java:S106½"+Replace this use of System.out by a logger.(Ú°Ûÿÿÿÿÿ8–Ä¿´Ì1
+H	java:S106Ç"+Replace this use of System.out by a logger.(€öÎÚ8–Ä¿´Ì1
+^	java:S125È"<This block of commented-out lines of code should be removed.(íà©ôşÿÿÿÿ8–Ä¿´Ì1
+M	java:S106à"+Replace this use of System.out by a logger.(Šè˜Õıÿÿÿÿ8–Ä¿´Ì1
+ä
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 185 to 64, Complexity from 24 to 14, Nesting Level from 4 to 2, Number of Variables from 13 to 6.(Çµí‘8–Ä¿´Ì1
