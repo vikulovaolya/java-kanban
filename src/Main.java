@@ -11,37 +11,37 @@ public class Main {
         TaskState state = null;
 
         /* Данные для быстрого тестирования */
-        TaskManager.setTask("Задача 1", "Текст задачи 1", TaskState.NEW);
-        TaskManager.setTask("Задача 2", "Текст задачи 2", TaskState.IN_PROGRESS);
-        TaskManager.setTask("Задача 3", "Текст задачи 3", TaskState.DONE);
-        TaskManager.setEpic("Эпик 4", "Текст эпика 4", null);
-        TaskManager.setEpic("Эпик 5", "Текст эпика 5", null);
-        TaskManager.setSubtask("Подзадача 6", "Текст подзадачи 6", TaskState.DONE, 4);
-        TaskManager.setSubtask("Подзадача 7", "Текст подзадачи 7", TaskState.IN_PROGRESS, 5);
-        TaskManager.setSubtask("Подзадача 8", "Текст подзадачи 8", TaskState.DONE, 5);
+        taskManager.setTask("Задача 1", "Текст задачи 1", TaskState.NEW);
+        taskManager.setTask("Задача 2", "Текст задачи 2", TaskState.IN_PROGRESS);
+        taskManager.setTask("Задача 3", "Текст задачи 3", TaskState.DONE);
+        taskManager.setEpic("Эпик 4", "Текст эпика 4", null);
+        taskManager.setEpic("Эпик 5", "Текст эпика 5", null);
+        taskManager.setSubtask("Подзадача 6", "Текст подзадачи 6", TaskState.DONE, 4);
+        taskManager.setSubtask("Подзадача 7", "Текст подзадачи 7", TaskState.IN_PROGRESS, 5);
+        taskManager.setSubtask("Подзадача 8", "Текст подзадачи 8", TaskState.DONE, 5);
         ArrayList<Integer> subtasks1 = new ArrayList<>();
         subtasks1.add(6);
-        TaskManager.updateEpic(4, "Эпик 4(обновленный)", "Текст эпика 1 (обновленный)",
+        taskManager.updateEpic(4, "Эпик 4(обновленный)", "Текст эпика 1 (обновленный)",
                 subtasks1);
         ArrayList<Integer> subtasks2 = new ArrayList<>();
         subtasks2.add(7);
         subtasks2.add(8);
-        TaskManager.updateEpic(5, "Эпик 5(обновленный)", "Текст эпика 2 (обновленный)",
+        taskManager.updateEpic(5, "Эпик 5(обновленный)", "Текст эпика 2 (обновленный)",
                 subtasks2);
-        TaskManager.deleteSubtask(6);
-        TaskManager.deleteTask(1);
-        TaskManager.deleteEpic(5);
-        TaskManager.setEpic("Эпик 9", "Текст эпика 9", null);
-        TaskManager.setSubtask("Подзадача 10", "Текст Подзадачи 10", TaskState.IN_PROGRESS, 9);
-        TaskManager.setSubtask("Подзадача 11", "Текст Подзадачи 11", TaskState.DONE, 9);
-        TaskManager.updateSubtask(10,"Подзадача 10 (обновление статуса)", "Текст Подзадачи 10",
+        taskManager.deleteSubtask(6);
+        taskManager.deleteTask(1);
+        taskManager.deleteEpic(5);
+        taskManager.setEpic("Эпик 9", "Текст эпика 9", null);
+        taskManager.setSubtask("Подзадача 10", "Текст Подзадачи 10", TaskState.IN_PROGRESS, 9);
+        taskManager.setSubtask("Подзадача 11", "Текст Подзадачи 11", TaskState.DONE, 9);
+        taskManager.updateSubtask(10,"Подзадача 10 (обновление статуса)", "Текст Подзадачи 10",
                 TaskState.DONE, 9);
-        TaskManager.updateSubtask(10,"Подзадача 10 (меняем эпик)", "Текст Подзадачи 10",
+        taskManager.updateSubtask(10,"Подзадача 10 (меняем эпик)", "Текст Подзадачи 10",
                 TaskState.DONE, 4);
-        TaskManager.updateSubtask(10,"Подзадача 10 (обновление статуса)", "Текст Подзадачи 10",
+        taskManager.updateSubtask(10,"Подзадача 10 (обновление статуса)", "Текст Подзадачи 10",
                 TaskState.NEW, 4);
-        //TaskManager.clearEpicList();
-        //TaskManager.clearSubtaskList();
+        //taskManager.clearEpicList();
+        //taskManager.clearSubtaskList();
 
 
         while (true) {
@@ -57,7 +57,7 @@ public class Main {
                     System.out.println("Введите текс задачи");
                     descr = scanner.next();
                     state = status(scanner);
-                    TaskManager.setTask(name, descr, state);
+                    taskManager.setTask(name, descr, state);
                     System.out.println("Задача добавлена");
                     break;
                 case "CREATE_SUBTASK":
@@ -68,7 +68,7 @@ public class Main {
                     state = status(scanner);
                     System.out.println("Введите эпик, к которому относится задача");
                     epicId = scanner.nextInt();
-                    TaskManager.setSubtask(name, descr, state, epicId);
+                    taskManager.setSubtask(name, descr, state, epicId);
                     System.out.println("Подзадача добавлена");
                     break;
                 case "CREATE_EPIC":
@@ -76,20 +76,20 @@ public class Main {
                     name = scanner.next();
                     System.out.println("Введите текс эпика");
                     descr = scanner.next();
-                    TaskManager.setEpic(name, descr, null);
+                    taskManager.setEpic(name, descr, null);
                     System.out.println("Эпик добавлена");
                     break;
                 case "GET_TASK_LIST":
                     System.out.println("Список задач:");
-                    System.out.println(TaskManager.getTaskList());
+                    System.out.println(taskManager.getTaskList());
                     break;
                 case "GET_SUBTASK_LIST":
                     System.out.println("Список подзадач:");
-                    System.out.println(TaskManager.getSubtaskList());
+                    System.out.println(taskManager.getSubtaskList());
                     break;
                 case "GET_EPIC_LIST":
                     System.out.println("Список эпиков:");
-                    System.out.println(TaskManager.getEpicList());
+                    System.out.println(taskManager.getEpicList());
                     break;
                 case "CLEAR_TASK_LIST":
                     taskManager.clearTaskList();
@@ -145,7 +145,7 @@ public class Main {
                     descr = scanner.next();
                     System.out.println("Введите статус задачи (NEW, IN_PROGRESS, DONE)");
                     state = status(scanner);
-                    TaskManager.updateTask(taskId, name, descr, state);
+                    taskManager.updateTask(taskId, name, descr, state);
                     System.out.println("Задача добавлена");
                     break;
                 case "UPDATE_SUBTASK":
@@ -158,7 +158,7 @@ public class Main {
                     state = status(scanner);
                     System.out.println("Введите эпик, к которому относится задача");
                     epicId = scanner.nextInt();
-                    TaskManager.updateSubtask(taskId, name, descr, state, epicId);
+                    taskManager.updateSubtask(taskId, name, descr, state, epicId);
                     System.out.println("Задача добавлена");
                     break;
                 case "UPDATE_EPIC":
@@ -179,14 +179,14 @@ public class Main {
                             includeSubtaskList.add(subtaskId);
                         }
                     }
-                    TaskManager.updateEpic(taskId, name, descr, includeSubtaskList);
+                    taskManager.updateEpic(taskId, name, descr, includeSubtaskList);
                     System.out.println("Задача добавлена");
                     break;
                 case "GET_SUBTASKS_FOR_EPIC":
                     System.out.println("Введите эпик, подзадачи которого необходимо вывести");
                     taskId = scanner.nextInt();
-                    TaskManager.getSubtaskListForEpic(taskId);
-                    System.out.println(TaskManager.getSubtaskListForEpic(taskId));
+                    taskManager.getSubtaskListForEpic(taskId);
+                    System.out.println(taskManager.getSubtaskListForEpic(taskId));
                     break;
                 case "EXIT":
                     System.exit(0);

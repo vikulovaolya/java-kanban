@@ -2,26 +2,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class TaskManager {
-    public static int counterId = 0;
+    public int counterId = 0;
     public int taskId;
 
-    public static HashMap <Integer, Task> taskList = new HashMap<>();
-    public static HashMap <Integer, Subtask> subtaskList = new HashMap<>();
-    public static  HashMap <Integer, Epic> epicList = new HashMap<>();
+    public HashMap <Integer, Task> taskList = new HashMap<>();
+    public HashMap <Integer, Subtask> subtaskList = new HashMap<>();
+    public  HashMap <Integer, Epic> epicList = new HashMap<>();
 
-    private static int getCountId (){
+    private int getCountId(){
         counterId += 1;
         return  counterId;
     }
 
-    public static Task setTask(String name, String description, TaskState state){
+    public Task setTask(String name, String description, TaskState state){
         int taskId = getCountId();
         Task task = new Task(taskId, name, description, state);
         taskList.put(taskId, task);
         return taskList.get(taskId);
     }
 
-    public static Subtask setSubtask(String name, String description, TaskState state, int epicId) {
+    public Subtask setSubtask(String name, String description, TaskState state, int epicId) {
         int taskId = getCountId();
         Subtask subtask = new Subtask(taskId, name, description, state, epicId);
         subtaskList.put(taskId, subtask);
@@ -38,7 +38,7 @@ public class TaskManager {
         return subtaskList.get(taskId);
     }
 
-    public static Epic setEpic(String name, String description, ArrayList<Integer> includeSubtaskList) {
+    public Epic setEpic(String name, String description, ArrayList<Integer> includeSubtaskList) {
         int taskId = getCountId();
         TaskState state = getEpicState(includeSubtaskList);
         Epic epic = new Epic(taskId, name, description, state, includeSubtaskList);
@@ -51,7 +51,7 @@ public class TaskManager {
         return epicList.get(taskId);
     }
 
-    public static ArrayList <Subtask> getSubtaskListForEpic (int taskId) {
+    public ArrayList <Subtask> getSubtaskListForEpic (int taskId) {
         ArrayList<Subtask> subtaskListForEpic = new ArrayList<>();
         for (Integer subtaskId : epicList.get(taskId).includeSubtaskList) {
             Subtask subtaskForEpic = subtaskList.get(subtaskId);
@@ -60,63 +60,63 @@ public class TaskManager {
         return subtaskListForEpic;
     }
 
-    public static HashMap<Integer, Task> getTaskList() {
+    public HashMap<Integer, Task> getTaskList() {
         return taskList;
     }
 
-    public static HashMap<Integer, Subtask> getSubtaskList() {
+    public HashMap<Integer, Subtask> getSubtaskList() {
         return subtaskList;
     }
 
-    public static HashMap<Integer, Epic> getEpicList() {
+    public HashMap<Integer, Epic> getEpicList() {
         return epicList;
     }
 
-    public static void clearTaskList(){
+    public void clearTaskList(){
         taskList.clear();
     }
-    public static void clearSubtaskList(){
+    public void clearSubtaskList(){
         for (Subtask subtask: subtaskList.values()){
             deleteConnectionWithSubtaskForEpic(subtask);
         }
         subtaskList.clear();
     }
-    public static void clearEpicList(){
+    public void clearEpicList(){
         for (Epic epic: epicList.values()){
             deleteSubtasksForEpic(epic);
         }
         epicList.clear();
     }
 
-    public static Task getTask(int taskId){
+    public Task getTask(int taskId){
         return taskList.get(taskId);
     }
 
-    public static Subtask getSubtask(int taskId){
+    public Subtask getSubtask(int taskId){
         return subtaskList.get(taskId);
     }
 
-    public static Epic getEpic(int taskId){
+    public Epic getEpic(int taskId){
         return epicList.get(taskId);
     }
 
-    public static void deleteTask(int taskId){
+    public void deleteTask(int taskId){
         taskList.remove(taskId);
     }
 
-    public static void deleteSubtask(int taskId){
+    public void deleteSubtask(int taskId){
         Subtask subtask = subtaskList.get(taskId);
         deleteConnectionWithSubtaskForEpic(subtask);
         subtaskList.remove(taskId);
     }
 
-    public static void deleteEpic(int taskId){
+    public void deleteEpic(int taskId){
         Epic epic = epicList.get(taskId);
         deleteSubtasksForEpic(epic);
         epicList.remove(taskId);
     }
 
-    public static Task updateTask(int taskId, String name, String description, TaskState state){
+    public Task updateTask(int taskId, String name, String description, TaskState state){
         if (taskList.containsKey(taskId)){
             taskList.remove(taskId);
             Task task = new Task(taskId, name, description, state);
@@ -127,7 +127,7 @@ public class TaskManager {
         }
     }
 
-    public static Subtask updateSubtask(int taskId, String name, String description, TaskState state, int epicId){
+    public Subtask updateSubtask(int taskId, String name, String description, TaskState state, int epicId){
         if (subtaskList.containsKey(taskId)){
             if (epicId != subtaskList.get(taskId).epicId){
                 epicList.get(epicId).includeSubtaskList.add(taskId);
@@ -148,7 +148,7 @@ public class TaskManager {
         }
     }
 
-    public static Epic updateEpic(int taskId, String name, String description, ArrayList<Integer> includeSubtaskList){
+    public Epic updateEpic(int taskId, String name, String description, ArrayList<Integer> includeSubtaskList){
         if (epicList.containsKey(taskId)) {
             TaskState state = getEpicState(includeSubtaskList);
             if (includeSubtaskList != epicList.get(taskId).includeSubtaskList){
@@ -167,7 +167,7 @@ public class TaskManager {
         }
     }
 
-    public static TaskState getEpicState(ArrayList <Integer> includeSubtaskList){
+    public TaskState getEpicState(ArrayList <Integer> includeSubtaskList){
         TaskState state = null;
         if (includeSubtaskList == null) {
             state = TaskState.NEW;
@@ -192,7 +192,7 @@ public class TaskManager {
         return state;
     }
 
-    public static void deleteConnectionWithSubtaskForEpic (Subtask subtask){
+    public void deleteConnectionWithSubtaskForEpic (Subtask subtask){
         int epicIdFromSubtask = subtask.epicId;
         ArrayList<Integer> arrayOfSubtasksForEpic = epicList.get(epicIdFromSubtask).includeSubtaskList;
         if (arrayOfSubtasksForEpic != null) {
@@ -202,7 +202,7 @@ public class TaskManager {
                 arrayOfSubtasksForEpic);
     }
 
-    public static void deleteSubtasksForEpic(Epic epic){
+    public void deleteSubtasksForEpic(Epic epic){
         if (epic.includeSubtaskList != null){
             for (int subtaskId: epic.includeSubtaskList){
                 subtaskList.remove(subtaskId);
