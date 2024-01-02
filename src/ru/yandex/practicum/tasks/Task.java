@@ -19,7 +19,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "ru.yandex.practicum.tasks.Task{" +
+        return "Task{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", state=" + state +

@@ -18,7 +18,7 @@ public class Epic extends Task {
 
     @Override
     public String toString() {
-        return "ru.yandex.practicum.tasks.Epic{" +
+        return "Epic{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", state=" + state +
