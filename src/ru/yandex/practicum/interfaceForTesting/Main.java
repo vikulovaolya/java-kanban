@@ -1,3 +1,11 @@
+package ru.yandex.practicum.interfaceForTesting;
+
+import ru.yandex.practicum.taskManager.TaskManager;
+import ru.yandex.practicum.tasks.Epic;
+import ru.yandex.practicum.tasks.Subtask;
+import ru.yandex.practicum.tasks.Task;
+import ru.yandex.practicum.tasks.TaskState;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {

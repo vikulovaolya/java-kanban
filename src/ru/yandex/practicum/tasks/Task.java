@@ -1,4 +1,4 @@
-import java.util.Objects;
+package ru.yandex.practicum.tasks;
 
 public class Task {
     protected String name;
@@ -19,7 +19,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
+        return "ru.yandex.practicum.tasks.Task{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", state=" + state +
