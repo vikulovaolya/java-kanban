@@ -127,6 +127,16 @@ public class TaskManager {
         }
     }
 
+    public Task updateTask2 (int taskId, Task taskWithChanges){
+        if (taskList.containsKey(taskId)){
+            taskList.remove(taskId);
+            taskList.put(taskId, taskWithChanges);
+            return taskList.get(taskId);
+        } else {
+            return null;
+        }
+    }
+
     public Subtask updateSubtask(int taskId, String name, String description, TaskState state, int epicId){
         if (subtaskList.containsKey(taskId)){
             if (epicId != subtaskList.get(taskId).epicId){

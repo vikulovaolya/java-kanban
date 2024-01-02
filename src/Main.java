@@ -19,6 +19,11 @@ public class Main {
         taskManager.setSubtask("Подзадача 6", "Текст подзадачи 6", TaskState.DONE, 4);
         taskManager.setSubtask("Подзадача 7", "Текст подзадачи 7", TaskState.IN_PROGRESS, 5);
         taskManager.setSubtask("Подзадача 8", "Текст подзадачи 8", TaskState.DONE, 5);
+        Task task = taskManager.getTask(1);
+        task.description = "Измененный текст задачи 1";
+
+
+        System.out.println(taskManager.updateTask2(1,task));
         ArrayList<Integer> subtasks1 = new ArrayList<>();
         subtasks1.add(6);
         taskManager.updateEpic(4, "Эпик 4(обновленный)", "Текст эпика 1 (обновленный)",
@@ -29,7 +34,6 @@ public class Main {
         taskManager.updateEpic(5, "Эпик 5(обновленный)", "Текст эпика 2 (обновленный)",
                 subtasks2);
         taskManager.deleteSubtask(6);
-        taskManager.deleteTask(1);
         taskManager.deleteEpic(5);
         taskManager.setEpic("Эпик 9", "Текст эпика 9", null);
         taskManager.setSubtask("Подзадача 10", "Текст Подзадачи 10", TaskState.IN_PROGRESS, 9);
