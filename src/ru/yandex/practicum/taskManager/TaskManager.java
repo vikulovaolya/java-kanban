@@ -10,8 +10,6 @@ import java.util.HashMap;
 
 public class TaskManager {
     public int counterId = 0;
-    public int taskId;
-
     public HashMap <Integer, Task> taskList = new HashMap<>();
     public HashMap <Integer, Subtask> subtaskList = new HashMap<>();
     public  HashMap <Integer, Epic> epicList = new HashMap<>();
@@ -27,6 +25,8 @@ public class TaskManager {
         taskList.put(taskId, task);
         return taskList.get(taskId);
     }
+
+
 
     public Subtask setSubtask(String name, String description, TaskState state, int epicId) {
         int taskId = getCountId();
@@ -211,4 +211,5 @@ public class TaskManager {
             }
         }
     }
+
 }
