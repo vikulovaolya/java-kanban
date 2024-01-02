@@ -1,10 +1,9 @@
 import java.util.Objects;
 
 public class Task {
-    public int id;
-    public String name;
-    public String description;
-    public TaskState state;
+    protected String name;
+    protected String description;
+    protected TaskState state;
 
     public Task(String name, String description, TaskState state) {
         this.name = name;
@@ -18,7 +17,6 @@ public class Task {
         this.state = another.state;
     }
 
-
     @Override
     public String toString() {
         return "Task{" +
@@ -28,16 +26,27 @@ public class Task {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        Task task = (Task) object;
-        return id == task.id;
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public String getDescription() {
+        return description;
+    }
+
+    public TaskState getState() {
+        return state;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setState(TaskState state) {
+        this.state = state;
     }
 }
