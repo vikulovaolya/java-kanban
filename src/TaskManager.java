@@ -16,14 +16,14 @@ public class TaskManager {
 
     public Task setTask(String name, String description, TaskState state){
         int taskId = getCountId();
-        Task task = new Task(taskId, name, description, state);
+        Task task = new Task(name, description, state);
         taskList.put(taskId, task);
         return taskList.get(taskId);
     }
 
     public Subtask setSubtask(String name, String description, TaskState state, int epicId) {
         int taskId = getCountId();
-        Subtask subtask = new Subtask(taskId, name, description, state, epicId);
+        Subtask subtask = new Subtask(name, description, state, epicId);
         subtaskList.put(taskId, subtask);
         ArrayList<Integer> arrayOfSubtasksForEpic = epicList.get(epicId).includeSubtaskList;
         if (arrayOfSubtasksForEpic != null) {
@@ -41,7 +41,7 @@ public class TaskManager {
     public Epic setEpic(String name, String description, ArrayList<Integer> includeSubtaskList) {
         int taskId = getCountId();
         TaskState state = getEpicState(includeSubtaskList);
-        Epic epic = new Epic(taskId, name, description, state, includeSubtaskList);
+        Epic epic = new Epic(name, description, state, includeSubtaskList);
         epicList.put(taskId, epic);
         if (includeSubtaskList != null){
             for (int subtaskId: includeSubtaskList){
@@ -76,8 +76,8 @@ public class TaskManager {
         taskList.clear();
     }
     public void clearSubtaskList(){
-        for (Subtask subtask: subtaskList.values()){
-            deleteConnectionWithSubtaskForEpic(subtask);
+        for (Integer subtaskId: subtaskList.keySet()){
+            deleteConnectionWithSubtaskForEpic(subtaskId, subtaskList.get(subtaskId).epicId);
         }
         subtaskList.clear();
     }
@@ -106,7 +106,7 @@ public class TaskManager {
 
     public void deleteSubtask(int taskId){
         Subtask subtask = subtaskList.get(taskId);
-        deleteConnectionWithSubtaskForEpic(subtask);
+        deleteConnectionWithSubtaskForEpic(taskId, subtask.epicId);
         subtaskList.remove(taskId);
     }
 
@@ -119,7 +119,7 @@ public class TaskManager {
     public Task updateTask(int taskId, String name, String description, TaskState state){
         if (taskList.containsKey(taskId)){
             taskList.remove(taskId);
-            Task task = new Task(taskId, name, description, state);
+            Task task = new Task(name, description, state);
             taskList.put(taskId, task);
             return taskList.get(taskId);
         } else {
@@ -137,7 +137,7 @@ public class TaskManager {
                 updateEpic(oldEpic, epicList.get(oldEpic).name, epicList.get(oldEpic).description,
                         epicList.get(oldEpic).includeSubtaskList);
             }
-            Subtask subtask = new Subtask(taskId, name, description, state, epicId);
+            Subtask subtask = new Subtask(name, description, state, epicId);
             subtaskList.remove(taskId);
             subtaskList.put(taskId, subtask);
             updateEpic(epicId, epicList.get(epicId).name, epicList.get(epicId).description,
@@ -159,7 +159,7 @@ public class TaskManager {
                 }
             }
             epicList.remove(taskId);
-            Epic epic = new Epic(taskId, name, description, state, includeSubtaskList);
+            Epic epic = new Epic(name, description, state, includeSubtaskList);
             epicList.put(taskId, epic);
             return epicList.get(taskId);
         } else {
@@ -192,13 +192,12 @@ public class TaskManager {
         return state;
     }
 
-    public void deleteConnectionWithSubtaskForEpic (Subtask subtask){
-        int epicIdFromSubtask = subtask.epicId;
-        ArrayList<Integer> arrayOfSubtasksForEpic = epicList.get(epicIdFromSubtask).includeSubtaskList;
+    public void deleteConnectionWithSubtaskForEpic (Integer subtaskId, int epicId){
+        ArrayList<Integer> arrayOfSubtasksForEpic = epicList.get(epicId).includeSubtaskList;
         if (arrayOfSubtasksForEpic != null) {
-            arrayOfSubtasksForEpic.remove((Integer) subtask.id);
+            arrayOfSubtasksForEpic.remove(subtaskId);
         }
-        updateEpic(epicIdFromSubtask, epicList.get(epicIdFromSubtask).name, epicList.get(epicIdFromSubtask).description,
+        updateEpic(epicId, epicList.get(epicId).name, epicList.get(epicId).description,
                 arrayOfSubtasksForEpic);
     }
 

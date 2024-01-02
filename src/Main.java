@@ -40,8 +40,8 @@ public class Main {
                 TaskState.DONE, 4);
         taskManager.updateSubtask(10,"Подзадача 10 (обновление статуса)", "Текст Подзадачи 10",
                 TaskState.NEW, 4);
-        //taskManager.clearEpicList();
-        //taskManager.clearSubtaskList();
+        taskManager.clearEpicList();
+        taskManager.clearSubtaskList();
 
 
         while (true) {

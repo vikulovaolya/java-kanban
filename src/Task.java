@@ -6,8 +6,7 @@ public class Task {
     public String description;
     public TaskState state;
 
-    public Task(int id, String name, String description, TaskState state) {
-        this.id = id;
+    public Task(String name, String description, TaskState state) {
         this.name = name;
         this.description = description;
         this.state = state;
