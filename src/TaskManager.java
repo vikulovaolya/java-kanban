@@ -33,8 +33,7 @@ public class TaskManager {
             newArrayOfSubtasksForEpic.add(taskId);
             epicList.get(epicId).includeSubtaskList = newArrayOfSubtasksForEpic;
         }
-        updateEpic(epicId, epicList.get(epicId).name, epicList.get(epicId).description,
-                epicList.get(epicId).includeSubtaskList);
+        updateEpic(epicId, epicList.get(epicId));
         return subtaskList.get(taskId);
     }
 
@@ -116,18 +115,7 @@ public class TaskManager {
         epicList.remove(taskId);
     }
 
-    public Task updateTask(int taskId, String name, String description, TaskState state){
-        if (taskList.containsKey(taskId)){
-            taskList.remove(taskId);
-            Task task = new Task(name, description, state);
-            taskList.put(taskId, task);
-            return taskList.get(taskId);
-        } else {
-            return null;
-        }
-    }
-
-    public Task updateTask2 (int taskId, Task taskWithChanges){
+    public Task updateTask (int taskId, Task taskWithChanges){
         if (taskList.containsKey(taskId)){
             taskList.remove(taskId);
             taskList.put(taskId, taskWithChanges);
@@ -137,40 +125,39 @@ public class TaskManager {
         }
     }
 
-    public Subtask updateSubtask(int taskId, String name, String description, TaskState state, int epicId){
+    public Subtask updateSubtask (int taskId, Subtask subtaskWithChanges){
         if (subtaskList.containsKey(taskId)){
-            if (epicId != subtaskList.get(taskId).epicId){
-                epicList.get(epicId).includeSubtaskList.add(taskId);
-                int oldEpic = subtaskList.get(taskId).epicId;
-                ArrayList<Integer> oldEpicSubtaskList = epicList.get(oldEpic).includeSubtaskList;
+            Subtask oldVersionOfSubtask = subtaskList.get(taskId);
+            int oldEpicId = oldVersionOfSubtask.epicId;
+            Epic oldEpic = epicList.get(oldEpicId);
+            if (subtaskWithChanges.epicId != oldEpicId) {
+                epicList.get(subtaskWithChanges.epicId).includeSubtaskList.add(taskId);
+                ArrayList<Integer> oldEpicSubtaskList = epicList.get(oldEpicId).includeSubtaskList;
                 oldEpicSubtaskList.remove((Integer) taskId);
-                updateEpic(oldEpic, epicList.get(oldEpic).name, epicList.get(oldEpic).description,
-                        epicList.get(oldEpic).includeSubtaskList);
+                oldEpic.includeSubtaskList = oldEpicSubtaskList;
+                updateEpic(oldEpicId, oldEpic);
             }
-            Subtask subtask = new Subtask(name, description, state, epicId);
             subtaskList.remove(taskId);
-            subtaskList.put(taskId, subtask);
-            updateEpic(epicId, epicList.get(epicId).name, epicList.get(epicId).description,
-                    epicList.get(epicId).includeSubtaskList);
+            subtaskList.put(taskId, subtaskWithChanges);
+            updateEpic(subtaskWithChanges.epicId, epicList.get(subtaskWithChanges.epicId));
             return subtaskList.get(taskId);
         } else {
             return null;
         }
     }
 
-    public Epic updateEpic(int taskId, String name, String description, ArrayList<Integer> includeSubtaskList){
+    public Epic updateEpic (int taskId, Epic epicWithChanges){
         if (epicList.containsKey(taskId)) {
-            TaskState state = getEpicState(includeSubtaskList);
-            if (includeSubtaskList != epicList.get(taskId).includeSubtaskList){
-                if (includeSubtaskList != null){
-                    for (int subtaskId: includeSubtaskList){
+            epicWithChanges.state = getEpicState(epicWithChanges.includeSubtaskList);
+            if (epicWithChanges.includeSubtaskList != epicList.get(taskId).includeSubtaskList){
+                if (epicWithChanges.includeSubtaskList != null){
+                    for (int subtaskId: epicWithChanges.includeSubtaskList){
                         subtaskList.get(subtaskId).epicId = taskId;
                     }
                 }
             }
             epicList.remove(taskId);
-            Epic epic = new Epic(name, description, state, includeSubtaskList);
-            epicList.put(taskId, epic);
+            epicList.put(taskId, epicWithChanges);
             return epicList.get(taskId);
         } else {
             return null;
@@ -207,8 +194,7 @@ public class TaskManager {
         if (arrayOfSubtasksForEpic != null) {
             arrayOfSubtasksForEpic.remove(subtaskId);
         }
-        updateEpic(epicId, epicList.get(epicId).name, epicList.get(epicId).description,
-                arrayOfSubtasksForEpic);
+        updateEpic(epicId, epicList.get(epicId));
     }
 
     public void deleteSubtasksForEpic(Epic epic){

@@ -12,6 +12,13 @@ public class Task {
         this.state = state;
     }
 
+    public Task (Task another){
+        this.name = another.name;
+        this.description = another.description;
+        this.state = another.state;
+    }
+
+
     @Override
     public String toString() {
         return "Task{" +

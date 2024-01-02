@@ -9,11 +9,15 @@ public class Epic extends Task {
         this.includeSubtaskList = includeSubtaskList;
     }
 
+    public Epic(Epic another) {
+        super(another);
+        this.includeSubtaskList = another.includeSubtaskList;
+    }
 
     @Override
     public String toString() {
         return "Epic{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", state=" + state +
                 ", includeSubtaskList=" + includeSubtaskList +
