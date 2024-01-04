@@ -1,4 +1,4 @@
-package ru.yandex.practicum.taskManager;
+package ru.yandex.practicum.taskmanager;
 
 import ru.yandex.practicum.tasks.Epic;
 import ru.yandex.practicum.tasks.Subtask;
@@ -14,19 +14,12 @@ public class TaskManager {
     public HashMap <Integer, Subtask> subtaskList = new HashMap<>();
     public  HashMap <Integer, Epic> epicList = new HashMap<>();
 
-    private int getCountId(){
-        counterId += 1;
-        return  counterId;
-    }
-
     public Task setTask(String name, String description, TaskState state){
         int taskId = getCountId();
         Task task = new Task(name, description, state);
         taskList.put(taskId, task);
         return taskList.get(taskId);
     }
-
-
 
     public Subtask setSubtask(String name, String description, TaskState state, int epicId) {
         int taskId = getCountId();
@@ -171,7 +164,12 @@ public class TaskManager {
         }
     }
 
-    public TaskState getEpicState(ArrayList <Integer> includeSubtaskList){
+    private int getCountId(){
+        counterId += 1;
+        return  counterId;
+    }
+
+    private TaskState getEpicState(ArrayList <Integer> includeSubtaskList){
         TaskState state = null;
         if (includeSubtaskList == null) {
             state = TaskState.NEW;
@@ -196,7 +194,7 @@ public class TaskManager {
         return state;
     }
 
-    public void deleteConnectionWithSubtaskForEpic (Integer subtaskId, int epicId){
+    private void deleteConnectionWithSubtaskForEpic (Integer subtaskId, int epicId){
         ArrayList<Integer> arrayOfSubtasksForEpic = epicList.get(epicId).getIncludeSubtaskList();
         if (arrayOfSubtasksForEpic != null) {
             arrayOfSubtasksForEpic.remove(subtaskId);
@@ -204,12 +202,11 @@ public class TaskManager {
         updateEpic(epicId, epicList.get(epicId));
     }
 
-    public void deleteSubtasksForEpic(Epic epic){
+    private void deleteSubtasksForEpic(Epic epic){
         if (epic.getIncludeSubtaskList() != null){
             for (int subtaskId: epic.getIncludeSubtaskList()){
                 subtaskList.remove(subtaskId);
             }
         }
     }
-
 }

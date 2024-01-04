@@ -2,7 +2,6 @@
 
 java:S1319"rThe type of "includeSubtaskList" should be an interface such as "List" rather than the implementation "ArrayList".(³å‰ø8ÀˆáÌ1
 ’
-java:S1319""pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÿÖ•Õûÿÿÿÿ8ÀˆáÌ1
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÿÖ•Õûÿÿÿÿ8ÀˆáÌ1
 ”
-java:S1319&"rThe type of "includeSubtaskList" should be an interface such as "List" rather than the implementation "ArrayList".(¡½§ùÿÿÿÿ8ÀˆáÌ1
-]	java:S125"<This block of commented-out lines of code should be removed.(æ Íùÿÿÿÿ8šÀˆáÌ1
+java:S1319!"rThe type of "includeSubtaskList" should be an interface such as "List" rather than the implementation "ArrayList".(¡½§ùÿÿÿÿ8ÀˆáÌ1

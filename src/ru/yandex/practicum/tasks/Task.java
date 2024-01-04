@@ -17,16 +17,6 @@ public class Task {
         this.state = another.state;
     }
 
-    /* По поводу дополнительных конструкторов вопрос: Вот допустим я добавляю еще конструктор как указано ниже.
-    Но я не могу понять как его использовать. Мне нужно сделать альтернативный метод setTask в TaskManager
-    для его использования?
-
-    public Task (String name) {
-        this.name = name;
-        this.description = "Добавь описание позже";
-        this.state = TaskState.NEW;
-    } */
-
     @Override
     public String toString() {
         return "Task{" +

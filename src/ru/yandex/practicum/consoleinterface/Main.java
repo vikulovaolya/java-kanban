@@ -1,6 +1,6 @@
-package ru.yandex.practicum.interfaceForTesting;
+package ru.yandex.practicum.consoleinterface;
 
-import ru.yandex.practicum.taskManager.TaskManager;
+import ru.yandex.practicum.taskmanager.TaskManager;
 import ru.yandex.practicum.tasks.Epic;
 import ru.yandex.practicum.tasks.Subtask;
 import ru.yandex.practicum.tasks.Task;
@@ -8,8 +8,8 @@ import ru.yandex.practicum.tasks.TaskState;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-public class Main {
 
+public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = new TaskManager();
         Scanner scanner = new Scanner(System.in);
@@ -55,7 +55,6 @@ public class Main {
         taskManager.updateSubtask(11, subtask2);
         //taskManager.clearEpicList();
         //taskManager.clearSubtaskList();
-
 
         while (true) {
             printMenu();
@@ -220,7 +219,6 @@ public class Main {
             }
         }
     }
-
 
     public static void printMenu() {
         System.out.println("Введите команду: ");

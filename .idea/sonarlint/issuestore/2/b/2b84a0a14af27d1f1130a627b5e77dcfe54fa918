@@ -1,9 +1,0 @@
-
-
-java:S1319"rThe type of "includeSubtaskList" should be an interface such as "List" rather than the implementation "ArrayList".(³å‰ø8¬ÌßßÌ1
-’
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÿÖ•Õûÿÿÿÿ8¬ÌßßÌ1
-”
-java:S1319!"rThe type of "includeSubtaskList" should be an interface such as "List" rather than the implementation "ArrayList".(¡½§ùÿÿÿÿ8¬ÌßßÌ1
-©
-java:S1598"†This file "Epic.java" should be located in "ru\yandex\practicum\tasks" directory, not in "C:\Users\user\IdeaProjects\java-kanban\src".(æ•¨Óüÿÿÿÿ8­ÌßßÌ1

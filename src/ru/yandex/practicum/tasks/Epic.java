@@ -16,11 +16,6 @@ public class Epic extends Task {
         this.includeSubtaskList = another.includeSubtaskList;
     }
 
-    /* public Epic(String name, ArrayList<Integer> includeSubtaskList){
-        super(name);
-        this.includeSubtaskList = includeSubtaskList;
-    } */
-
     @Override
     public String toString() {
         return "Epic{" +

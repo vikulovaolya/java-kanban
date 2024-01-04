@@ -13,11 +13,6 @@ public class Subtask extends Task {
         this.epicId = another.epicId;
     }
 
-    /* public Subtask(String name, int epicId){
-        super(name);
-        this.epicId = epicId;
-    }*/
-
     @Override
     public String toString() {
         return "Subtask{" +
