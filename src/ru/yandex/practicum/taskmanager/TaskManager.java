@@ -7,6 +7,7 @@ import ru.yandex.practicum.tasks.TaskState;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public interface TaskManager  {
     Task setTask(String name, String description, TaskState state);
@@ -29,11 +30,11 @@ public interface TaskManager  {
 
     void clearEpicList();
 
-    Task getTask(int taskId);
+    Task getTask(int taskId, boolean isFixInHistory);
 
-    Subtask getSubtask(int taskId);
+    Subtask getSubtask(int taskId, boolean isFixInHistory);
 
-    Epic getEpic(int taskId);
+    Epic getEpic(int taskId, boolean isFixInHistory);
 
     void deleteTask(int taskId);
 
@@ -46,4 +47,6 @@ public interface TaskManager  {
     Subtask updateSubtask(int taskId, Subtask subtaskWithChanges);
 
     Epic updateEpic(int taskId, Epic epicWithChanges);
+
+    List<Task> getHistory();
 }
