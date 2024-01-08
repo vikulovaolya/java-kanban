@@ -47,3 +47,5 @@ l
 <src/ru/yandex/practicum/taskmanager/InMemoryTaskManager.java,1\2\129d8fad8ac240ed1579287a312c0a1eb34434af
 e
 5src/ru/yandex/practicum/taskmanager/TaskManager1.java,2\9\29a39cbcfcffbe174762aba5073c7e3e6a4c78a5
+a
+1src/ru/yandex/practicum/taskmanager/Managers.java,4\2\420e544f4039b5f2d344771099197238846a492a

@@ -1,0 +1,7 @@
+
+y
+java:S1104"WMake taskManaget a static final constant or non-public and provide accessors if needed.(×ŸŽÑýÿÿÿÿ8¥‡¸ÑÎ1
+S
+java:S1444"1Make this "public static taskManaget" field final(×ŸŽÑýÿÿÿÿ8‘ç½ÑÎ1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(¹ÊãÞúÿÿÿÿ8Ôº¾ÑÎ1

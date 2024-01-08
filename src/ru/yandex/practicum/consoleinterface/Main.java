@@ -2,17 +2,20 @@ package ru.yandex.practicum.consoleinterface;
 
 import ru.yandex.practicum.taskmanager.InMemoryTaskManager;
 import ru.yandex.practicum.taskmanager.TaskManager;
+import ru.yandex.practicum.taskmanager.Managers;
 import ru.yandex.practicum.tasks.Epic;
 import ru.yandex.practicum.tasks.Subtask;
 import ru.yandex.practicum.tasks.Task;
 import ru.yandex.practicum.tasks.TaskState;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        InMemoryTaskManager taskManager= new InMemoryTaskManager();
+        InMemoryTaskManager taskManager = Managers.getDefault();
+
         Scanner scanner = new Scanner(System.in);
         int taskId;
         int epicId;
@@ -54,6 +57,13 @@ public class Main {
         subtask2.setName("Подзадача 11 (обновление статуса)");
         subtask2.setState(TaskState.IN_PROGRESS);
         taskManager.updateSubtask(11, subtask2);
+        for (int i = 0; i < 8; i++){
+            taskManager.getEpic(4,true);
+        }
+        taskManager.getEpic(9, true);
+        taskManager.getTask(2, true);
+        taskManager.getTask(2, true);
+        taskManager.getTask(1, true);
         //taskManager.clearEpicList();
         //taskManager.clearSubtaskList();
 
