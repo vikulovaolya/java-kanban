@@ -43,3 +43,7 @@ b
 2src/ru/yandex/practicum/consoleinterface/Main.java,2\f\2f2faf422dae12c8a08e8aa8ffd498fc5be9159d
 d
 4src/ru/yandex/practicum/taskmanager/TaskManager.java,5\6\5618a3a4ea7e58c8fde4f61fbb4f8bbf62b4e6e5
+l
+<src/ru/yandex/practicum/taskmanager/InMemoryTaskManager.java,1\2\129d8fad8ac240ed1579287a312c0a1eb34434af
+e
+5src/ru/yandex/practicum/taskmanager/TaskManager1.java,2\9\29a39cbcfcffbe174762aba5073c7e3e6a4c78a5

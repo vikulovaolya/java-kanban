@@ -1,5 +1,6 @@
 package ru.yandex.practicum.consoleinterface;
 
+import ru.yandex.practicum.taskmanager.InMemoryTaskManager;
 import ru.yandex.practicum.taskmanager.TaskManager;
 import ru.yandex.practicum.tasks.Epic;
 import ru.yandex.practicum.tasks.Subtask;
@@ -11,7 +12,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        TaskManager taskManager = new TaskManager();
+        InMemoryTaskManager taskManager= new InMemoryTaskManager();
         Scanner scanner = new Scanner(System.in);
         int taskId;
         int epicId;
