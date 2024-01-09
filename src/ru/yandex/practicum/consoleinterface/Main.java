@@ -1,9 +1,7 @@
 package ru.yandex.practicum.consoleinterface;
 
-import ru.yandex.practicum.taskmanager.InMemoryHistoryManager;
-import ru.yandex.practicum.taskmanager.InMemoryTaskManager;
-import ru.yandex.practicum.taskmanager.TaskManager;
-import ru.yandex.practicum.taskmanager.Managers;
+import ru.yandex.practicum.managers.taskmanager.InMemoryTaskManager;
+import ru.yandex.practicum.managers.Managers;
 import ru.yandex.practicum.tasks.Epic;
 import ru.yandex.practicum.tasks.Subtask;
 import ru.yandex.practicum.tasks.Task;

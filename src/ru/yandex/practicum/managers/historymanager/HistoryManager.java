@@ -1,8 +1,7 @@
-package ru.yandex.practicum.taskmanager;
+package ru.yandex.practicum.managers.historymanager;
 
 import ru.yandex.practicum.tasks.Task;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface HistoryManager {

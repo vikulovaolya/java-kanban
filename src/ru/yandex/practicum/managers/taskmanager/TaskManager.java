@@ -1,4 +1,4 @@
-package ru.yandex.practicum.taskmanager;
+package ru.yandex.practicum.managers.taskmanager;
 
 import ru.yandex.practicum.tasks.Epic;
 import ru.yandex.practicum.tasks.Subtask;
@@ -7,7 +7,6 @@ import ru.yandex.practicum.tasks.TaskState;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public interface TaskManager  {
     Task setTask(String name, String description, TaskState state);

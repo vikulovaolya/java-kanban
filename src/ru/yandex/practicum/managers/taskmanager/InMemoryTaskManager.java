@@ -1,5 +1,7 @@
-package ru.yandex.practicum.taskmanager;
+package ru.yandex.practicum.managers.taskmanager;
 
+import ru.yandex.practicum.managers.historymanager.HistoryManager;
+import ru.yandex.practicum.managers.Managers;
 import ru.yandex.practicum.tasks.Epic;
 import ru.yandex.practicum.tasks.Subtask;
 import ru.yandex.practicum.tasks.Task;
@@ -7,7 +9,6 @@ import ru.yandex.practicum.tasks.TaskState;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class InMemoryTaskManager implements TaskManager {
 
