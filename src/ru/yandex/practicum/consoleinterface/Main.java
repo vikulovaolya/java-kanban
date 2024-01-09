@@ -1,5 +1,6 @@
 package ru.yandex.practicum.consoleinterface;
 
+import ru.yandex.practicum.taskmanager.InMemoryHistoryManager;
 import ru.yandex.practicum.taskmanager.InMemoryTaskManager;
 import ru.yandex.practicum.taskmanager.TaskManager;
 import ru.yandex.practicum.taskmanager.Managers;
@@ -227,7 +228,7 @@ public class Main {
                     break;
                 case "GET_HISTORY":
                     System.out.println("История просмотренных задач:");
-                    System.out.println(taskManager.getHistory());
+                    System.out.println(taskManager.historyManager.getHistory());
                     break;
                 case "EXIT":
                     System.exit(0);

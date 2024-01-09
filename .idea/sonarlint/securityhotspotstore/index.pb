@@ -49,3 +49,7 @@ e
 5src/ru/yandex/practicum/taskmanager/TaskManager1.java,2\9\29a39cbcfcffbe174762aba5073c7e3e6a4c78a5
 a
 1src/ru/yandex/practicum/taskmanager/Managers.java,4\2\420e544f4039b5f2d344771099197238846a492a
+g
+7src/ru/yandex/practicum/taskmanager/HistoryManager.java,e\e\ee44487ae9066f364529a79e7b20a67312acf4f0
+o
+?src/ru/yandex/practicum/taskmanager/InMemoryHistoryManager.java,6\a\6aee3ef701afe54e5d1f385116ef49bb6fd3da72

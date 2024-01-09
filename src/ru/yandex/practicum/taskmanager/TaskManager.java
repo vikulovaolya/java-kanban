@@ -48,5 +48,4 @@ public interface TaskManager  {
 
     Epic updateEpic(int taskId, Epic epicWithChanges);
 
-    List<Task> getHistory();
 }
