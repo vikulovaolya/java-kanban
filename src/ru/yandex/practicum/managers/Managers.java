@@ -12,7 +12,7 @@ public class Managers {
         return taskManaget;
     }
 
-    public static HistoryManager getDefaultHistory(){
+    public static InMemoryHistoryManager getDefaultHistory(){
         historyManager = new InMemoryHistoryManager();
         return historyManager;
     }

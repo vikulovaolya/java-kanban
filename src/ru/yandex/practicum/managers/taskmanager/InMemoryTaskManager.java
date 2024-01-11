@@ -32,8 +32,12 @@ public class InMemoryTaskManager implements TaskManager {
     public Subtask setSubtask(String name, String description, TaskState state, int epicId) {
         int taskId = getCountId();
         Subtask subtask = new Subtask(name, description, state, epicId);
+        if (taskId == epicId){
+            return null;
+        }
         subtaskList.put(taskId, subtask);
         ArrayList<Integer> arrayOfSubtasksForEpic = epicList.get(epicId).getIncludeSubtaskList();
+
         if (arrayOfSubtasksForEpic != null) {
             arrayOfSubtasksForEpic.add(taskId);
         } else {
@@ -48,6 +52,13 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public Epic setEpic(String name, String description, ArrayList<Integer> includeSubtaskList) {
         int taskId = getCountId();
+        if (includeSubtaskList != null){
+            for (Integer subtask: includeSubtaskList){
+                if (subtask == taskId){
+                    return null;
+                }
+            }
+        }
         TaskState state = getEpicState(includeSubtaskList);
         Epic epic = new Epic(name, description, state, includeSubtaskList);
         epicList.put(taskId, epic);
