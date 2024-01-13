@@ -20,11 +20,14 @@ class SubtaskTest {
     }
     @Test
     public void shouldWhenAddTaskWithUsedIdTaskIsRecord(){
-        Subtask subtask1 = new Subtask("Subtask1", "DesctiptionSubtask1", TaskState.NEW, 1);
-        taskManager.taskList.put(1, subtask1);
-        Subtask subtask2 = new Subtask("Subtask1.1", "DesctiptionSubtask1.1", TaskState.IN_PROGRESS, 2);
-        taskManager.taskList.put(1, subtask2);
-        assertEquals(taskManager.taskList.get(1), subtask2, "Ошибка: subtask, полученный по id и subtask, " +
+        Subtask subtask = new Subtask("Subtask1", "DesctiptionSubtask1", TaskState.NEW, 1);
+        taskManager.taskList.put(1, subtask);
+        Subtask savedSubtask = new Subtask("Subtask1.1", "DesctiptionSubtask1.1", TaskState.IN_PROGRESS, 2);
+        taskManager.taskList.put(1, savedSubtask);
+        assertNotNull(taskManager.taskList.get(1), "Ошибка: созданный subtask не найден");
+        assertNotNull(taskManager.taskList, "Ошибка: в хеш-таблице не сохранено добавленное значение subtask");
+        assertEquals(1, taskManager.taskList.size(), "Ошибка: неверное количество задач в хеш-таблице subtask.");
+        assertEquals(taskManager.taskList.get(1), savedSubtask, "Ошибка: subtask, полученный по id и subtask, " +
                 "который добавлялся ранее с соответствующим id не равны");
     }
 }

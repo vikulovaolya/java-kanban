@@ -1,6 +1,7 @@
 package ru.yandex.practicum.managers.taskmanager;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.yandex.practicum.managers.Managers;
 import ru.yandex.practicum.tasks.Subtask;
@@ -14,8 +15,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class InMemoryTaskManagerTest {
     public static InMemoryTaskManager taskManager;
-    @BeforeAll
-    public static void beforeEach(){
+    @BeforeEach
+    public void beforeEach(){
         taskManager = Managers.getDefault();
     }
 

@@ -17,12 +17,15 @@ class TaskTest {
 
     @Test
     public void shouldWhenAddTaskWithUsedIdTaskIsRecord(){
-        int taskId = 1;
-        Task task1 = new Task("Task1", "DesctiptionTask1", TaskState.NEW);
-        taskManager.taskList.put(taskId, task1);
-        Task task2 = new Task("Task1.1", "DesctiptionTask1.1", TaskState.IN_PROGRESS);
-        taskManager.taskList.put(taskId, task2);
-        assertEquals(taskManager.taskList.get(taskId), task2, "Ошибка: task, полученный по id и task, " +
+        Task task = new Task("Task1", "DesctiptionTask1", TaskState.NEW);
+        taskManager.taskList.put(1, task);
+        assertNotNull(taskManager.taskList.get(1), "Ошибка: созданный task не найден");
+        assertNotNull(taskManager.taskList, "Ошибка: в хеш-таблице не сохранено добавленное значение task");
+        assertEquals(1, taskManager.taskList.size(), "Ошибка: неверное количество задач в " +
+                "хеш-таблице task");
+        Task savedTask = new Task("Task1.1", "DesctiptionTask1.1", TaskState.IN_PROGRESS);
+        taskManager.taskList.put(1, savedTask);
+        assertEquals(taskManager.taskList.get(1), savedTask, "Ошибка: task, полученный по id и task, " +
         "который добавлялся ранее с соответствующим id не равны");
     }
 }

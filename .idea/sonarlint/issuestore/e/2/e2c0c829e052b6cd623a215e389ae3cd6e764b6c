@@ -1,3 +1,7 @@
 
-3
-java:S2187"Add some tests to this class.(™Π 
+;
+java:S5786"Remove this 'public' modifier.(ϊχή³8…¨Π1
+;
+java:S5786&"Remove this 'public' modifier.(Ή¤’8…¨Π1
+x
+java:S3415:"VSwap these 2 arguments so they are in the correct order: expected value, actual value.(ΕΖΏόÿÿÿÿ8…¨Π1
