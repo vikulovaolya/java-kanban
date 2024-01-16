@@ -7,7 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InMemoryHistoryManager implements HistoryManager {
-    public List<Task> taskHistoryList = new ArrayList<>();
+    protected List<Task> taskHistoryList = new ArrayList<>();
+    /* Модификатор доступа поправила, благодарю. А последовательность добавлления элементов в историю я бы могла
+    исправить, но думаю лучшше не стоит править учитывая что такой подход был описан в ТЗ, чтобы в
+    последующих заданиях править это не пришлось */
     @Override
     public List<Task> getHistory(){
         return taskHistoryList;

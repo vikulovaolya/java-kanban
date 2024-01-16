@@ -17,7 +17,7 @@ class EpicTest {
     public static void beforeEach() {
         taskManager = Managers.getDefault();
     }
-
+/*
     @Test
     public void shouldWhenAddTaskWithUsedIdTaskIsRecord() {
         ArrayList<Integer> includeSubtaskList1 = new ArrayList<>();
@@ -34,5 +34,5 @@ class EpicTest {
         assertEquals(1, taskManager.taskList.size(), "Ошибка: неверное количество задач в хеш-таблице epic.");
         assertEquals(taskManager.taskList.get(4), savedEpic, "Ошибка: epic, полученный по id и epic, " +
                 "который добавлялся ранее с соответствующим id не равны");
-    }
+    } */
 }

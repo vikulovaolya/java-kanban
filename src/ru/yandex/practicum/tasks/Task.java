@@ -4,14 +4,17 @@ public class Task {
     protected String name;
     protected String description;
     protected TaskState state;
+    protected int id;
 
-    public Task(String name, String description, TaskState state) {
+    public Task(int id, String name, String description, TaskState state) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.state = state;
     }
 
     public Task (Task another){
+        this.id = another.id;
         this.name = another.name;
         this.description = another.description;
         this.state = another.state;
@@ -20,7 +23,8 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", state=" + state +
                 '}';

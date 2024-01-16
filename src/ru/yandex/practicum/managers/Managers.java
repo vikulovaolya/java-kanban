@@ -8,12 +8,17 @@ public class Managers {
     public static InMemoryTaskManager taskManaget;
     public static InMemoryHistoryManager historyManager;
     public static InMemoryTaskManager getDefault(){
-        taskManaget = new InMemoryTaskManager();
+        if (taskManaget == null){
+            taskManaget = new InMemoryTaskManager();
+
+        }
         return taskManaget;
     }
 
     public static InMemoryHistoryManager getDefaultHistory(){
-        historyManager = new InMemoryHistoryManager();
+        if (historyManager == null){
+            historyManager = new InMemoryHistoryManager();
+        }
         return historyManager;
     }
 }

@@ -38,11 +38,11 @@ class InMemoryHistoryManagerTest {
     public void shouldSaveHistoryRecord(){
         taskManager.setEpic("Epic", "DescriptionEpic", null);
         taskManager.setSubtask("Subtask", "DescriptionSubtask", TaskState.NEW, 1);
-        taskManager.getSubtask(2, true);
-        taskManager.getEpic(1, true);
+        taskManager.getSubtask(2);
+        taskManager.getEpic(1);
         List<Task> newTaskHistoryList = new ArrayList<>();
-        newTaskHistoryList.add(taskManager.getSubtask(2, false));
-        newTaskHistoryList.add(taskManager.getEpic(1, false));
+        newTaskHistoryList.add(taskManager.getSubtask(2));
+        newTaskHistoryList.add(taskManager.getEpic(1));
         List<Task> taskHistoryList = taskManager.historyManager.getHistory();
         assertEquals(newTaskHistoryList.size(), taskHistoryList.size(), "Ошибка: заявленный и ожидаемый " +
                 "массивы е совпадают по размеру");

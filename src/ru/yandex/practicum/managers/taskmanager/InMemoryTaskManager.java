@@ -10,20 +10,20 @@ import ru.yandex.practicum.tasks.TaskState;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static ru.yandex.practicum.managers.Managers.historyManager;
+
 public class InMemoryTaskManager implements TaskManager {
 
+    public HistoryManager historyManager = Managers.getDefaultHistory();
     public int counterId = 0;
     public HashMap<Integer, Task> taskList = new HashMap<>();
     public HashMap<Integer, Subtask> subtaskList = new HashMap<>();
     public HashMap<Integer, Epic> epicList = new HashMap<>();
 
-    public HistoryManager historyManager = Managers.getDefaultHistory();
-
-
     @Override
     public Task setTask(String name, String description, TaskState state) {
         int taskId = getCountId();
-        Task task = new Task(name, description, state);
+        Task task = new Task(taskId, name, description, state);
         taskList.put(taskId, task);
         return taskList.get(taskId);
     }
@@ -31,7 +31,7 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public Subtask setSubtask(String name, String description, TaskState state, int epicId) {
         int taskId = getCountId();
-        Subtask subtask = new Subtask(name, description, state, epicId);
+        Subtask subtask = new Subtask(taskId, name, description, state, epicId);
         if (taskId == epicId){
             return null;
         }
@@ -60,7 +60,7 @@ public class InMemoryTaskManager implements TaskManager {
             }
         }
         TaskState state = getEpicState(includeSubtaskList);
-        Epic epic = new Epic(name, description, state, includeSubtaskList);
+        Epic epic = new Epic(taskId, name, description, state, includeSubtaskList);
         epicList.put(taskId, epic);
         if (includeSubtaskList != null) {
             for (int subtaskId : includeSubtaskList) {
@@ -81,18 +81,30 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
-    public HashMap<Integer, Task> getTaskList() {
-        return taskList;
+    public ArrayList<Task> getTaskList() {
+        ArrayList<Task> taskArrayList = new ArrayList<>();
+        for (Task task: taskList.values()){
+            taskArrayList.add(task);
+        }
+        return taskArrayList;
     }
 
     @Override
-    public HashMap<Integer, Subtask> getSubtaskList() {
-        return subtaskList;
+    public ArrayList<Subtask> getSubtaskList() {
+        ArrayList<Subtask> subtaskArrayList = new ArrayList<>();
+        for (Subtask subtask: subtaskList.values()){
+            subtaskArrayList.add(subtask);
+        }
+        return subtaskArrayList;
     }
 
     @Override
-    public HashMap<Integer, Epic> getEpicList() {
-        return epicList;
+    public ArrayList<Epic> getEpicList() {
+        ArrayList<Epic> epicArrayList = new ArrayList<>();
+        for (Epic epic: epicList.values()){
+            epicArrayList.add(epic);
+        }
+        return epicArrayList;
     }
 
     @Override
@@ -117,27 +129,27 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
-    public Task getTask(int taskId, boolean isFixInHistory) {
+    public Task getTask(int taskId) {
         Task taskObject = taskList.get(taskId);
-        if (isFixInHistory){
+        if (taskObject != null){
             historyManager.add(taskObject);
         }
         return taskObject;
     }
 
     @Override
-    public Subtask getSubtask(int taskId, boolean isFixInHistory) {
+    public Subtask getSubtask(int taskId) {
         Subtask subtaskObject = subtaskList.get(taskId);
-        if (isFixInHistory){
+        if (subtaskObject != null){
             historyManager.add(subtaskObject);
         }
         return subtaskObject;
     }
 
     @Override
-    public Epic getEpic(int taskId, boolean isFixInHistory) {
+    public Epic getEpic(int taskId) {
         Epic epicObject = epicList.get(taskId);
-        if (isFixInHistory){
+        if (epicObject != null){
             historyManager.add(epicObject);
         }
         return epicObject;

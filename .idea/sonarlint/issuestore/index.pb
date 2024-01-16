@@ -53,3 +53,5 @@ Jtest/ru/yandex/practicum/managers/taskmanager/InMemoryTaskManagerTest.java,f\f
 Ptest/ru/yandex/practicum/managers/historymanager/InMemoryHistoryManagerTest.java,e\2\e2c0c829e052b6cd623a215e389ae3cd6e764b6c
 s
 Csrc/ru/yandex/practicum/managers/historymanager/HistoryManager.java,3\2\32b9783de28d36a65c8dc6b123c2a38e85569849
+m
+=src/ru/yandex/practicum/managers/taskmanager/TaskManager.java,3\a\3ae80ea3446188bf911b53282a5b163ccdf85d58

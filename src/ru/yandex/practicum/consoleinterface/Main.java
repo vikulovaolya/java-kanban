@@ -1,5 +1,6 @@
 package ru.yandex.practicum.consoleinterface;
 
+import ru.yandex.practicum.managers.historymanager.HistoryManager;
 import ru.yandex.practicum.managers.taskmanager.InMemoryTaskManager;
 import ru.yandex.practicum.managers.Managers;
 import ru.yandex.practicum.tasks.Epic;
@@ -14,6 +15,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         InMemoryTaskManager taskManager = Managers.getDefault();
+
 
         Scanner scanner = new Scanner(System.in);
         int taskId;
@@ -30,14 +32,14 @@ public class Main {
         taskManager.setSubtask("Подзадача 6", "Текст подзадачи 6", TaskState.DONE, 4);
         taskManager.setSubtask("Подзадача 7", "Текст подзадачи 7", TaskState.IN_PROGRESS, 5);
         taskManager.setSubtask("Подзадача 8", "Текст подзадачи 8", TaskState.DONE, 5);
-        Task task = new Task(taskManager.getTask(1, false));
+        Task task = new Task(taskManager.getTask(1));
         task.setDescription("Измененный текст задачи 1");
         taskManager.updateTask(1,task);
-        Epic epic1 = new Epic(taskManager.getEpic(4, false));
+        Epic epic1 = new Epic(taskManager.getEpic(4));
         epic1.setName("Эпик 4(обновленный)");
         epic1.setDescription("Текст эпика 1 (обновленный)");
         taskManager.updateEpic(4, epic1);
-        Epic epic2 = new Epic(taskManager.getEpic(5, false));
+        Epic epic2 = new Epic(taskManager.getEpic(5));
         epic2.setName("Эпик 5(обновленный)");
         epic2.setDescription("Текст эпика 2 (обновленный)");
         taskManager.updateEpic(5, epic2);
@@ -46,23 +48,23 @@ public class Main {
         taskManager.setEpic("Эпик 9", "Текст эпика 9", null);
         taskManager.setSubtask("Подзадача 10", "Текст Подзадачи 10", TaskState.IN_PROGRESS, 9);
         taskManager.setSubtask("Подзадача 11", "Текст Подзадачи 11", TaskState.DONE, 9);
-        Subtask subtask1 = new Subtask(taskManager.getSubtask(10, false));
+        Subtask subtask1 = new Subtask(taskManager.getSubtask(10));
         subtask1.setName("Подзадача 10 (обновление статуса  смена эпика)");
         subtask1.setDescription("Текст Подзадачи 10");
         subtask1.setState(TaskState.DONE);
         subtask1.setEpicId(4);
         taskManager.updateSubtask(10, subtask1);
-        Subtask subtask2 = new Subtask(taskManager.getSubtask(11, false));
+        Subtask subtask2 = new Subtask(taskManager.getSubtask(11));
         subtask2.setName("Подзадача 11 (обновление статуса)");
         subtask2.setState(TaskState.IN_PROGRESS);
         taskManager.updateSubtask(11, subtask2);
         for (int i = 0; i < 8; i++){
-            taskManager.getEpic(4,true);
+            taskManager.getEpic(4);
         }
-        taskManager.getEpic(9, true);
-        taskManager.getTask(2, true);
-        taskManager.getTask(2, true);
-        taskManager.getTask(1, true);
+        taskManager.getEpic(9);
+        taskManager.getTask(2);
+        taskManager.getTask(2);
+        taskManager.getTask(1);
         //taskManager.clearEpicList();
         //taskManager.clearSubtaskList();
 
@@ -129,19 +131,19 @@ public class Main {
                     System.out.println("Введите id задачи, которую хотите получить");
                     taskId = scanner.nextInt();
                     //taskManager.getTask(taskId, true);
-                    System.out.println(taskManager.getTask(taskId, true));
+                    System.out.println(taskManager.getTask(taskId));
                     break;
                 case "GET_SUBTASK":
                     System.out.println("Введите id задачи, которую хотите получить");
                     taskId = scanner.nextInt();
                     //taskManager.getSubtask(taskId, true);
-                    System.out.println(taskManager.getSubtask(taskId, true));
+                    System.out.println(taskManager.getSubtask(taskId));
                     break;
                 case "GET_EPIC":
                     System.out.println("Введите id задачи, которую хотите получить");
                     taskId = scanner.nextInt();
                     //taskManager.getEpic(taskId, true);
-                    System.out.println(taskManager.getEpic(taskId, true));
+                    System.out.println(taskManager.getEpic(taskId));
                     break;
                 case "DELETE_TASK":
                     System.out.println("Введите id задачи, которую хотите удалить");
@@ -167,7 +169,7 @@ public class Main {
                     descr = scanner.next();
                     System.out.println("Введите статус задачи (NEW, IN_PROGRESS, DONE)");
                     state = status(scanner);
-                    Task newTask = new Task(taskManager.getTask(taskId, false));
+                    Task newTask = new Task(taskManager.getTask(taskId));
                     newTask.setName(name);
                     newTask.setDescription(descr);
                     newTask.setState(state);
@@ -184,7 +186,7 @@ public class Main {
                     state = status(scanner);
                     System.out.println("Введите эпик, к которому относится задача");
                     epicId = scanner.nextInt();
-                    Subtask newSubtask = new Subtask(taskManager.getSubtask(taskId, false));
+                    Subtask newSubtask = new Subtask(taskManager.getSubtask(taskId));
                     newSubtask.setName(name);
                     newSubtask.setDescription(descr);
                     newSubtask.setState(state);
@@ -210,7 +212,7 @@ public class Main {
                             includeSubtaskList.add(subtaskId);
                         }
                     }
-                    Epic newEpic = new Epic(taskManager.getEpic(taskId, false));
+                    Epic newEpic = new Epic(taskManager.getEpic(taskId));
                     newEpic.setName(name);
                     newEpic.setDescription(descr);
                     newEpic.setState(state);

@@ -17,11 +17,11 @@ public interface TaskManager  {
 
     ArrayList<Subtask> getSubtaskListForEpic(int taskId);
 
-    HashMap<Integer, Task> getTaskList();
+    ArrayList<Task> getTaskList();
 
-    HashMap<Integer, Subtask> getSubtaskList();
+    ArrayList<Subtask> getSubtaskList();
 
-    HashMap<Integer, Epic> getEpicList();
+    ArrayList<Epic> getEpicList();
 
     void clearTaskList();
 
@@ -29,11 +29,11 @@ public interface TaskManager  {
 
     void clearEpicList();
 
-    Task getTask(int taskId, boolean isFixInHistory);
+    Task getTask(int taskId);
 
-    Subtask getSubtask(int taskId, boolean isFixInHistory);
+    Subtask getSubtask(int taskId);
 
-    Epic getEpic(int taskId, boolean isFixInHistory);
+    Epic getEpic(int taskId);
 
     void deleteTask(int taskId);
 

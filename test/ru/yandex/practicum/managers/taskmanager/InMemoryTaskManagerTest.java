@@ -38,7 +38,7 @@ class InMemoryTaskManagerTest {
     @Test
     public void shouldCreateEndFindTaskObject(){
         taskManager.setTask("Task", "DescriptionTask", TaskState.NEW);
-        assertNotNull(taskManager.getTask(1, false), "Ошибка: не удалось получить ранее " +
+        assertNotNull(taskManager.getTask(1), "Ошибка: не удалось получить ранее " +
                 "созданный task");
     }
 
@@ -46,14 +46,14 @@ class InMemoryTaskManagerTest {
     public void shouldCreateEndFindSubtaskObject(){
         taskManager.setEpic("Epic", "DescriptionEpic", null);
         taskManager.setSubtask("Subtask", "DescriptionSubtask", TaskState.NEW, 1);
-        assertNotNull(taskManager.getSubtask(2, false), "Ошибка: не удалось получить ранее " +
+        assertNotNull(taskManager.getSubtask(2), "Ошибка: не удалось получить ранее " +
                 "созданный subtask");
     }
 
     @Test
     public void shouldCreateEndFindEpicObject(){
         taskManager.setEpic("Epic", "DescriptionEpic", null);
-        assertNotNull(taskManager.getEpic(1, false), "Ошибка: не удалось получить ранее " +
+        assertNotNull(taskManager.getEpic(1), "Ошибка: не удалось получить ранее " +
                 "созданный epic");
     }
 }
