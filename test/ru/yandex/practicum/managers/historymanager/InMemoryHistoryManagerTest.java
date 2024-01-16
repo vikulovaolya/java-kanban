@@ -27,7 +27,7 @@ class InMemoryHistoryManagerTest {
 
     @Test
     public void addHistoryRecord(){
-        Task task = new Task("Task1", "DesctiptionTask1", TaskState.NEW);
+        Task task = new Task(1, "Task1", "DesctiptionTask1", TaskState.NEW);
         historyManager.add(task);
         final List<Task> history = historyManager.getHistory();
         assertNotNull(history, "Ошибка: история пустая.");
