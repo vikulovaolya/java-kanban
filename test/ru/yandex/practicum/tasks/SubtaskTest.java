@@ -1,15 +1,12 @@
 package ru.yandex.practicum.tasks;
 
 import org.junit.jupiter.api.BeforeAll;
-
 import org.junit.jupiter.api.Test;
 import ru.yandex.practicum.managers.Managers;
 import ru.yandex.practicum.managers.taskmanager.InMemoryTaskManager;
 
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static ru.yandex.practicum.tasks.TaskTest.taskManager;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 class SubtaskTest {

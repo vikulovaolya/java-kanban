@@ -6,7 +6,6 @@ import ru.yandex.practicum.tasks.Task;
 import ru.yandex.practicum.tasks.TaskState;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public interface TaskManager  { // Не могу понять зачем здесь нужен метод получения истории, он же в historyManager
     Task setTask(String name, String description, TaskState state);

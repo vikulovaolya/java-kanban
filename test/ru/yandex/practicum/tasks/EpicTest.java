@@ -1,23 +1,25 @@
 package ru.yandex.practicum.tasks;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.yandex.practicum.managers.Managers;
+import ru.yandex.practicum.managers.historymanager.HistoryManager;
+import ru.yandex.practicum.managers.historymanager.InMemoryHistoryManager;
 import ru.yandex.practicum.managers.taskmanager.InMemoryTaskManager;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class EpicTest {
 
     public static InMemoryTaskManager taskManager;
-
-    @BeforeAll
-    public static void beforeEach() {
-        taskManager = Managers.getDefault();
+    public static HistoryManager historyManager;
+    @BeforeEach
+    public void beforeEach(){
+        historyManager = new InMemoryHistoryManager();
+        taskManager = new InMemoryTaskManager(historyManager);
     }
-
     @Test
     public void shouldWhenAddTaskWithUsedIdTaskIsRecord() {
         ArrayList<Integer> includeSubtaskList1 = new ArrayList<>();

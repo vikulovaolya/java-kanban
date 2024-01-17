@@ -1,11 +1,9 @@
 package ru.yandex.practicum.managers.taskmanager;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.yandex.practicum.managers.Managers;
-import ru.yandex.practicum.tasks.Subtask;
-import ru.yandex.practicum.tasks.Task;
+import ru.yandex.practicum.managers.historymanager.HistoryManager;
+import ru.yandex.practicum.managers.historymanager.InMemoryHistoryManager;
 import ru.yandex.practicum.tasks.TaskState;
 
 import java.util.ArrayList;
@@ -15,9 +13,11 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class InMemoryTaskManagerTest {
     public static InMemoryTaskManager taskManager;
+    public static HistoryManager historyManager;
     @BeforeEach
     public void beforeEach(){
-        taskManager = Managers.getDefault();
+        historyManager = new InMemoryHistoryManager();
+        taskManager = new InMemoryTaskManager(historyManager);
     }
 
     @Test

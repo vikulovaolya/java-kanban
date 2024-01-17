@@ -1,16 +1,13 @@
 package ru.yandex.practicum.managers.historymanager;
 
-import ru.yandex.practicum.managers.historymanager.HistoryManager;
 import ru.yandex.practicum.tasks.Task;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class InMemoryHistoryManager implements HistoryManager {
-    protected LinkedList<Task> taskHistoryList = new LinkedList<>();
+    protected ArrayList<Task> taskHistoryList = new ArrayList<>();
     @Override
-    public List<Task> getHistory(){
+    public ArrayList<Task> getHistory(){
         return taskHistoryList;
     }
 

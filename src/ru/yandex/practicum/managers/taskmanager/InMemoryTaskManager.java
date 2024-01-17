@@ -1,7 +1,6 @@
 package ru.yandex.practicum.managers.taskmanager;
 
 import ru.yandex.practicum.managers.historymanager.HistoryManager;
-import ru.yandex.practicum.managers.Managers;
 import ru.yandex.practicum.tasks.Epic;
 import ru.yandex.practicum.tasks.Subtask;
 import ru.yandex.practicum.tasks.Task;
@@ -10,15 +9,17 @@ import ru.yandex.practicum.tasks.TaskState;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static ru.yandex.practicum.managers.Managers.historyManager;
-
 public class InMemoryTaskManager implements TaskManager {
 
-    public HistoryManager historyManager = Managers.getDefaultHistory();
+    public HistoryManager historyManager;
     public int counterId = 0;
     public HashMap<Integer, Task> taskList = new HashMap<>();
     public HashMap<Integer, Subtask> subtaskList = new HashMap<>();
     public HashMap<Integer, Epic> epicList = new HashMap<>();
+
+    public InMemoryTaskManager(HistoryManager historyManager) {
+        this.historyManager = historyManager;
+    }
 
     @Override
     public Task setTask(String name, String description, TaskState state) {
@@ -241,10 +242,12 @@ public class InMemoryTaskManager implements TaskManager {
             int newStateSubtasks = 0;
             int doneStateSubtasks = 0;
             for (Integer subtaskId : includeSubtaskList) {
-                if (subtaskList.get(subtaskId).getState() == TaskState.NEW) {
-                    newStateSubtasks += 1;
-                } else if (subtaskList.get(subtaskId).getState() == TaskState.DONE) {
-                    doneStateSubtasks += 1;
+                if (subtaskList.get(subtaskId) != null){
+                    if (subtaskList.get(subtaskId).getState() == TaskState.NEW) {
+                        newStateSubtasks += 1;
+                    } else if (subtaskList.get(subtaskId).getState() == TaskState.DONE) {
+                        doneStateSubtasks += 1;
+                    }
                 }
             }
             if (newStateSubtasks == includeSubtaskList.size()) {

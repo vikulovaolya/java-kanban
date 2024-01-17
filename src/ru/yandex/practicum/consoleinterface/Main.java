@@ -1,13 +1,11 @@
 package ru.yandex.practicum.consoleinterface;
 
-import ru.yandex.practicum.managers.historymanager.HistoryManager;
-import ru.yandex.practicum.managers.taskmanager.InMemoryTaskManager;
 import ru.yandex.practicum.managers.Managers;
+import ru.yandex.practicum.managers.taskmanager.InMemoryTaskManager;
 import ru.yandex.practicum.tasks.Epic;
 import ru.yandex.practicum.tasks.Subtask;
 import ru.yandex.practicum.tasks.Task;
 import ru.yandex.practicum.tasks.TaskState;
-
 
 import java.util.ArrayList;
 import java.util.Scanner;

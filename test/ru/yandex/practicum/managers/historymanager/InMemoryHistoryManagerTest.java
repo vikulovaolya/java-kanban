@@ -2,49 +2,49 @@ package ru.yandex.practicum.managers.historymanager;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.yandex.practicum.managers.Managers;
 import ru.yandex.practicum.managers.taskmanager.InMemoryTaskManager;
+import ru.yandex.practicum.tasks.Epic;
+import ru.yandex.practicum.tasks.Subtask;
 import ru.yandex.practicum.tasks.Task;
 import ru.yandex.practicum.tasks.TaskState;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.Assertions.*;
-
 import static java.lang.Integer.min;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static ru.yandex.practicum.managers.Managers.historyManager;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class InMemoryHistoryManagerTest {
-    public static InMemoryTaskManager taskManager;
+    public static InMemoryTaskManager testTaskManager;
+    public static HistoryManager testHistoryManager;
 
     @BeforeEach
     public void beforeEach(){
-        taskManager = Managers.getDefault();
+        testHistoryManager = new InMemoryHistoryManager();
+        testTaskManager = new InMemoryTaskManager(testHistoryManager);
     }
 
     @Test
     public void addHistoryRecord(){
         Task task = new Task(1, "Task1", "DesctiptionTask1", TaskState.NEW);
-        historyManager.add(task);
-        final List<Task> history = historyManager.getHistory();
+        testHistoryManager.add(task);
+        final List<Task> history = testHistoryManager.getHistory();
         assertNotNull(history, "Ошибка: история пустая.");
         assertEquals(1, history.size(), "Ошибка: неверное количество записей в истории запросов task");
     }
 
     @Test
     public void shouldSaveHistoryRecord(){
-        taskManager.setEpic("Epic", "DescriptionEpic", null);
-        taskManager.setSubtask("Subtask", "DescriptionSubtask", TaskState.NEW, 1);
-        taskManager.getSubtask(2);
-        taskManager.getEpic(1);
-        List<Task> newTaskHistoryList = new ArrayList<>();
-        newTaskHistoryList.add(taskManager.getSubtask(2));
-        newTaskHistoryList.add(taskManager.getEpic(1));
-        List<Task> taskHistoryList = taskManager.historyManager.getHistory();
-        assertEquals(newTaskHistoryList.size(), taskHistoryList.size(), "Ошибка: заявленный и ожидаемый " +
+        testTaskManager.setEpic("Epic", "DescriptionEpic", null);
+        testTaskManager.setSubtask("Subtask", "DescriptionSubtask", TaskState.NEW, 1);
+        Subtask subtask = testTaskManager.getSubtask(2);
+        Epic epic = testTaskManager.getEpic(1);
+        ArrayList<Task> newTaskHistoryList = new ArrayList<>();
+        newTaskHistoryList.add(subtask);
+        newTaskHistoryList.add(epic);
+        ArrayList<Task> taskHistoryList =  testTaskManager.historyManager.getHistory();
+        assertEquals((Integer)newTaskHistoryList.size(), (Integer)taskHistoryList.size(), "Ошибка: заявленный и ожидаемый " +
                 "массивы е совпадают по размеру");
         boolean isEqualsArraysValue = true;
         int quantityCheckElements = min (newTaskHistoryList.size(), taskHistoryList.size());
