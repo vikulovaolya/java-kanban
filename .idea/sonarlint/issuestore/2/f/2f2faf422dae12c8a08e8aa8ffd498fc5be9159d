@@ -11,6 +11,7 @@ java:S1192•"‹Define a constant instead of duplicating this literal "Ð’Ð²ÐµÐ´Ð
 java:S1192¦"xDefine a constant instead of duplicating this literal "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ð¾Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð·Ð°Ð´Ð°Ñ‡Ð¸" 3 times.(ÍÊ€ª8¢µ–ÒÎ1
 D
 java:S2189G""Add an end condition to this loop.(˜ïˆžÿÿÿÿÿ8åž© Ñ1
+]	java:S125="<This block of commented-out lines of code should be removed.(”ò¾Œúÿÿÿÿ8ÿƒ¨ÅÑ1
 W	java:S125D"<This block of commented-out lines of code should be removed.(´´(8¶µ–ÒÎ1
 C	java:S131L""Add a default case to this switch.(¸ìù«üÿÿÿÿ8¾µ–ÒÎ1
 G	java:S106N"+Replace this use of System.out by a logger.(ù°µÔ8¾µ–ÒÎ1
@@ -71,4 +72,4 @@ M	java:S106Š"+Replace this use of System.out by a logger.(Šè˜Õýÿÿÿÿ8Çµ–ÒÎ1
 y
 java:S1128"WRemove this unused import 'ru.yandex.practicum.managers.historymanager.HistoryManager'.(ž¾íéýÿÿÿÿ8þž© Ñ1
 ä
-java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 212 to 64, Complexity from 26 to 14, Nesting Level from 4 to 2, Number of Variables from 20 to 6.(Çµí‘8Çµ–ÒÎ1
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 209 to 64, Complexity from 25 to 14, Nesting Level from 4 to 2, Number of Variables from 19 to 6.(Çµí‘8Çµ–ÒÎ1
