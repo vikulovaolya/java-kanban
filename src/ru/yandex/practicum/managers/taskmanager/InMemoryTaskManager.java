@@ -227,6 +227,10 @@ public class InMemoryTaskManager implements TaskManager {
         }
     }
 
+    public ArrayList<Task> getHistory(){
+        return historyManager.getHistory();
+    }
+
 
 
     private int getCountId() {

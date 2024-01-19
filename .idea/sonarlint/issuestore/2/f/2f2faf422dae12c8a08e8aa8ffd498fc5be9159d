@@ -9,8 +9,6 @@ java:S1192"Define a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ğ
 java:S1192“"‹Define a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ id Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸, ĞºĞ¾Ñ‚Ğ¾Ñ€ÑƒÑ Ñ…Ğ¾Ñ‚Ğ¸Ñ‚Ğµ ÑƒĞ´Ğ°Ğ»Ğ¸Ñ‚ÑŒ" 3 times.(ê‹ÌÚ8¢µ–ÒÎ1
 –
 java:S1192¤"xDefine a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ½Ğ¾Ğ²Ğ¾Ğµ Ğ½Ğ°Ğ·Ğ²Ğ°Ğ½Ğ¸Ğµ Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸" 3 times.(ÍÊ€ª8¢µ–ÒÎ1
-D
-java:S2189E""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8å© Ñ1
 ]	java:S125;"<This block of commented-out lines of code should be removed.(”ò¾Œúÿÿÿÿ8ÿƒ¨ÅÑ1
 W	java:S125B"<This block of commented-out lines of code should be removed.(´´(8¶µ–ÒÎ1
 C	java:S131J""Add a default case to this switch.(¸ìù«üÿÿÿÿ8¾µ–ÒÎ1
@@ -65,7 +63,7 @@ H	java:S106Û"+Replace this use of System.out by a logger.(üİ·İ8Çµ–ÒÎ1
 H	java:S106Ş"+Replace this use of System.out by a logger.(¢ÌÁ8Çµ–ÒÎ1
 H	java:S106á"+Replace this use of System.out by a logger.(™¨ò’8Çµ–ÒÎ1
 H	java:S106ä"+Replace this use of System.out by a logger.(Õ÷ş·8Çµ–ÒÎ1
-H	java:S106å"+Replace this use of System.out by a logger.(ûìŒ…8Çµ–ÒÎ1
+M	java:S106å"+Replace this use of System.out by a logger.(«‘„ïıÿÿÿÿ8Çµ–ÒÎ1
 H	java:S106î"+Replace this use of System.out by a logger.(€öÎÚ8Çµ–ÒÎ1
 ^	java:S125ï"<This block of commented-out lines of code should be removed.(íà©ôşÿÿÿÿ8Çµ–ÒÎ1
 M	java:S106ˆ"+Replace this use of System.out by a logger.(Šè˜Õıÿÿÿÿ8Çµ–ÒÎ1

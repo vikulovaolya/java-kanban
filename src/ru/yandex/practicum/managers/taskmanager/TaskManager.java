@@ -7,7 +7,7 @@ import ru.yandex.practicum.tasks.TaskState;
 
 import java.util.ArrayList;
 
-public interface TaskManager  { // Не могу понять зачем здесь нужен метод получения истории, он же в historyManager
+public interface TaskManager  {
     Task setTask(String name, String description, TaskState state);
 
     Subtask setSubtask(String name, String description, TaskState state, int epicId);
@@ -45,5 +45,7 @@ public interface TaskManager  { // Не могу понять зачем зде�
     Subtask updateSubtask(int taskId, Subtask subtaskWithChanges);
 
     Epic updateEpic(int taskId, Epic epicWithChanges);
+
+    ArrayList<Task> getHistory();
 
 }

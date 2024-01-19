@@ -226,7 +226,7 @@ public class Main {
                     break;
                 case "GET_HISTORY":
                     System.out.println("История просмотренных задач:");
-                    System.out.println(taskManager.historyManager.getHistory());
+                    System.out.println(taskManager.getHistory());
                     break;
                 case "EXIT":
                     System.exit(0);
