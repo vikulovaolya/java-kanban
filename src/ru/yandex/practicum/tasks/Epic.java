@@ -9,6 +9,8 @@ public class Epic extends Task {
         super(id, name, description, state);
         this.state = state;
         this.includeSubtaskList = includeSubtaskList;
+        this.prev = null;
+        this.next = null;
     }
 
     public Epic(Epic another) {
@@ -19,11 +21,13 @@ public class Epic extends Task {
     @Override
     public String toString() {
         return "Epic{" +
-                "id=" + id +
+                "includeSubtaskList=" + includeSubtaskList +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", state=" + state +
-                ", includeSubtaskList=" + includeSubtaskList +
+                ", id=" + id +
+                ", prev=" + prev +
+                ", next=" + next +
                 '}';
     }
 

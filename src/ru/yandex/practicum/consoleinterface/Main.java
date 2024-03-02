@@ -36,6 +36,7 @@ public class Main {
         Epic epic1 = new Epic(taskManager.getEpic(4));
         epic1.setName("Эпик 4(обновленный)");
         epic1.setDescription("Текст эпика 1 (обновленный)");
+        /*
         taskManager.updateEpic(4, epic1);
         Epic epic2 = new Epic(taskManager.getEpic(5));
         epic2.setName("Эпик 5(обновленный)");
@@ -65,6 +66,8 @@ public class Main {
         taskManager.getTask(1);
         //taskManager.clearEpicList();
         //taskManager.clearSubtaskList();
+
+         */
 
         while (true) {
             printMenu();

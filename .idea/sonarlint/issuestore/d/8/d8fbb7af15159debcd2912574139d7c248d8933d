@@ -7,8 +7,6 @@ java:S1319"eThe type of "taskList" should be an interface such as "Map" rather
 java:S1319"hThe type of "subtaskList" should be an interface such as "Map" rather than the implementation "HashMap".(¿Âû•8ž´°ŒÒ1
 ‡
 java:S1319"eThe type of "epicList" should be an interface such as "Map" rather than the implementation "HashMap".(í¾ù¡ûÿÿÿÿ8ž´°ŒÒ1
-Ž
-java:S1319æ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(³„Ù¼8ž´°ŒÒ1
 |
 java:S1104"ZMake historyManager a static final constant or non-public and provide accessors if needed.(»û…èÿÿÿÿÿ8ž´°ŒÒ1
 r

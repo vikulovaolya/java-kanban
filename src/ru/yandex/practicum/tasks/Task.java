@@ -5,6 +5,8 @@ public class Task {
     protected String description;
     protected TaskState state;
     protected int id;
+    protected Task prev;
+    protected Task next;
 
     public Task(int id, String name, String description, TaskState state) {
         this.id = id;
@@ -18,15 +20,19 @@ public class Task {
         this.name = another.name;
         this.description = another.description;
         this.state = another.state;
+        this.prev = null;
+        this.next = null;
     }
 
     @Override
     public String toString() {
         return "Task{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", state=" + state +
+                ", id=" + id +
+                ", prev=" + prev +
+                ", next=" + next +
                 '}';
     }
 
@@ -52,5 +58,29 @@ public class Task {
 
     public void setState(TaskState state) {
         this.state = state;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Task getPrev() {
+        return prev;
+    }
+
+    public Task getNext() {
+        return next;
+    }
+
+    public void setPrev(Task prev) {
+        this.prev = prev;
+    }
+
+    public void setNext(Task next) {
+        this.next = next;
     }
 }
