@@ -62,7 +62,7 @@ public class InMemoryHistoryManager implements HistoryManager {
         int taskId = task.getId();
         oldLastNode.setNext(taskId);
         Task taskInOldLastNode = oldLastNode.getTask();
-        Node node = new Node (task, taskInOldLastNode.getId(), null);
+        Node node = new Node(task, taskInOldLastNode.getId(), null);
         lastNodeInHistory = node;
         taskHistoryMap.put(taskId,node);
     }
