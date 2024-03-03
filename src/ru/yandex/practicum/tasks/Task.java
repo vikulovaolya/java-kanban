@@ -15,7 +15,7 @@ public class Task {
         this.state = state;
     }
 
-    public Task (Task another){
+    public Task(Task another) {
         this.id = another.id;
         this.name = another.name;
         this.description = another.description;
