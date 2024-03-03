@@ -7,7 +7,7 @@ public class Node {
     protected Integer prev;
     protected Integer next;
 
-    public Node (Task task, Integer prev, Integer next){
+    public Node(Task task, Integer prev, Integer next) {
         this.task = task;
         this.prev = prev;
         this.next = next;
