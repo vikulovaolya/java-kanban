@@ -1,6 +1,6 @@
 
 ’
-java:S1319f"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‰áĞıÿÿÿÿ8ã¹¿¦à1
-r	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÅö½ıÿÿÿÿ8ã¹¿¦à1
+java:S1319h"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‰áĞıÿÿÿÿ8ıï”§à1
+r	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÅö½ıÿÿÿÿ8ıï”§à1
 H
-java:S1168j"+Return an empty collection instead of null.(¥¹ï8£“À¦à1
+java:S1168l"+Return an empty collection instead of null.(¥¹ï8ğ”§à1

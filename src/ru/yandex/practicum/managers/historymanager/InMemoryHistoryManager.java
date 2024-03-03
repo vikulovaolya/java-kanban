@@ -46,11 +46,13 @@ public class InMemoryHistoryManager implements HistoryManager {
             lastNodeInHistory = node;
             taskHistoryMap.put(taskId,node);
         } else {
-            if (taskHistoryMap.containsKey(taskId)){
-                Node node = taskHistoryMap.get(taskId);
-                removeNode(node);
+            if (taskHistoryMap.get(taskId)!=lastNodeInHistory) {
+                if (taskHistoryMap.containsKey(taskId)) {
+                    Node node = taskHistoryMap.get(taskId);
+                    removeNode(node);
+                }
+                linkLast(task);
             }
-            linkLast(task);
         }
     }
 
