@@ -122,6 +122,6 @@ class InMemoryHistoryManagerTest {
         historyTasks.add(newTask);
         historyTasks.add(newEpic);
         historyTasks.add(newSubtask);
-        assertEquals(historyList, historyTasks, "Ошибка: проблемы обновления ссылки на таски в истории");
+        assertEquals(historyList, historyTasks, "Ошибка: проблемы обновления ссылки на таски в истории просмотров");
     }
 }
