@@ -56,5 +56,6 @@ class InMemoryHistoryManagerTest {
             }
         }
         assertEquals(isEqualsArraysValue, true, "Ошибка: не совпадают значения элементов массивов");
+        // fix-return
     }
 }
