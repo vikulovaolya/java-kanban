@@ -15,13 +15,15 @@ public class InMemoryHistoryManager implements HistoryManager {
     Node lastNodeInHistory;
     @Override
     public ArrayList<Task> getHistory(){
-        getTasks();
+        taskHistoryList = getTasks();
         return taskHistoryList;
     }
 
     @Override
     public void remove(int id){
-
+        Node node = taskHistoryMap.get(id);
+        removeNode(node);
+        taskHistoryMap.remove(id);
     }
 
     @Override
@@ -91,10 +93,14 @@ public class InMemoryHistoryManager implements HistoryManager {
         Node node = firstNodeInHistory;
         while (true){
             Task task = node.getTask();
-            taskHistoryList.add(task);
-            if (node.getNext() == null){
+            taskHistory.add(task);
+            Integer nextNodeId = node.getNext();
+            if (nextNodeId == null){
                 break;
+            } else {
+                node = taskHistoryMap.get(nextNodeId);
             }
+
         }
         return taskHistory;
     }
