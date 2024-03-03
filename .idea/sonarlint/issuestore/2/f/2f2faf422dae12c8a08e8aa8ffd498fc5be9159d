@@ -11,7 +11,7 @@ java:S1192–"‹Define a constant instead of duplicating this literal "Ð’Ð²ÐµÐ´Ð
 java:S1192§"xDefine a constant instead of duplicating this literal "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ð¾Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð·Ð°Ð´Ð°Ñ‡Ð¸" 3 times.(ÍÊ€ª8“†ó£à1
 D
 java:S2189H""Add an end condition to this loop.(˜ïˆžÿÿÿÿÿ8‹ˆó£à1
-W	java:S125C"<This block of commented-out lines of code should be removed.(´´(8‡Œ¤à1
+W	java:S125C"<This block of commented-out lines of code should be removed.(´´(8óìï¯à1
 C	java:S131M""Add a default case to this switch.(¸ìù«üÿÿÿÿ8šˆó£à1
 G	java:S106O"+Replace this use of System.out by a logger.(ù°µÔ8šˆó£à1
 G	java:S106P"+Replace this use of System.out by a logger.(ù°µÔ8šˆó£à1
