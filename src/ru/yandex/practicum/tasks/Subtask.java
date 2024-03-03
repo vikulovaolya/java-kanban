@@ -6,8 +6,6 @@ public class Subtask extends Task {
         super(id, name, description, state);
         this.state = state;
         this.epicId = epicId;
-        this.prev = null;
-        this.next = null;
     }
 
     public Subtask(Subtask another) {
@@ -23,8 +21,6 @@ public class Subtask extends Task {
                 ", description='" + description + '\'' +
                 ", state=" + state +
                 ", id=" + id +
-                ", prev=" + prev +
-                ", next=" + next +
                 '}';
     }
 

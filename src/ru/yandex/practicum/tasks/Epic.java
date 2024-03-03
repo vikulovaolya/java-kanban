@@ -9,8 +9,6 @@ public class Epic extends Task {
         super(id, name, description, state);
         this.state = state;
         this.includeSubtaskList = includeSubtaskList;
-        this.prev = null;
-        this.next = null;
     }
 
     public Epic(Epic another) {
@@ -26,8 +24,6 @@ public class Epic extends Task {
                 ", description='" + description + '\'' +
                 ", state=" + state +
                 ", id=" + id +
-                ", prev=" + prev +
-                ", next=" + next +
                 '}';
     }
 

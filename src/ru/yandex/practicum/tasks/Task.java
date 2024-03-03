@@ -20,8 +20,6 @@ public class Task {
         this.name = another.name;
         this.description = another.description;
         this.state = another.state;
-        this.prev = null;
-        this.next = null;
     }
 
     @Override
@@ -31,8 +29,6 @@ public class Task {
                 ", description='" + description + '\'' +
                 ", state=" + state +
                 ", id=" + id +
-                ", prev=" + prev +
-                ", next=" + next +
                 '}';
     }
 
