@@ -57,9 +57,9 @@ public class Main {
         subtask2.setName("Подзадача 11 (обновление статуса)");
         subtask2.setState(TaskState.IN_PROGRESS);
         taskManager.updateSubtask(11, subtask2);
-        //for (int i = 0; i < 8; i++){
-        //    taskManager.getEpic(4);
-        //}
+        for (int i = 0; i < 8; i++){
+            taskManager.getEpic(4);
+        }
         taskManager.getEpic(9);
         taskManager.getTask(2);
         taskManager.getTask(2);

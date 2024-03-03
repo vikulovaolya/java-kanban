@@ -29,6 +29,15 @@ public class InMemoryHistoryManager implements HistoryManager {
     }
 
     @Override
+    public void update(Task task){
+        int taskId = task.getId();
+        Node node = taskHistoryMap.get(taskId);
+        if (node != null){
+            node.setTask(task);
+        }
+    }
+
+    @Override
     public void add(Task task){
         int taskId = task.getId();
         if (taskHistoryMap.size() == 0){
@@ -93,17 +102,21 @@ public class InMemoryHistoryManager implements HistoryManager {
     public ArrayList<Task> getTasks(){
         ArrayList<Task> taskHistory = new ArrayList<>();
         Node node = firstNodeInHistory;
-        while (true){
-            Task task = node.getTask();
-            taskHistory.add(task);
-            Integer nextNodeId = node.getNext();
-            if (nextNodeId == null){
-                break;
-            } else {
-                node = taskHistoryMap.get(nextNodeId);
-            }
+        if (firstNodeInHistory == null) {
+            return null;
+        } else {
+            while (true) {
+                Task task = node.getTask();
+                taskHistory.add(task);
+                Integer nextNodeId = node.getNext();
+                if (nextNodeId == null) {
+                    break;
+                } else {
+                    node = taskHistoryMap.get(nextNodeId);
+                }
 
+            }
+            return taskHistory;
         }
-        return taskHistory;
     }
 }

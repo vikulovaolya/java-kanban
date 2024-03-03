@@ -110,12 +110,16 @@ public class InMemoryTaskManager implements TaskManager {
 
     @Override
     public void clearTaskList() {
+        for (Integer taskId: taskList.keySet()){
+            historyManager.remove(taskId);
+        }
         taskList.clear();
     }
 
     @Override
     public void clearSubtaskList() {
         for (Integer subtaskId : subtaskList.keySet()) {
+            historyManager.remove(subtaskId);
             deleteConnectionWithSubtaskForEpic(subtaskId, subtaskList.get(subtaskId).getEpicId());
         }
         subtaskList.clear();
@@ -124,6 +128,8 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public void clearEpicList() {
         for (Epic epic : epicList.values()) {
+            Integer epicId = epic.getId();
+            historyManager.remove(epicId);
             deleteSubtasksForEpic(epic);
         }
         epicList.clear();
@@ -183,6 +189,7 @@ public class InMemoryTaskManager implements TaskManager {
         if (taskList.containsKey(taskId)) {
             taskList.remove(taskId);
             taskList.put(taskId, taskWithChanges);
+            historyManager.update(taskWithChanges);
             return taskList.get(taskId);
         } else {
             return null;
@@ -205,6 +212,7 @@ public class InMemoryTaskManager implements TaskManager {
             subtaskList.remove(taskId);
             subtaskList.put(taskId, subtaskWithChanges);
             updateEpic(subtaskWithChanges.getEpicId(), epicList.get(subtaskWithChanges.getEpicId()));
+            historyManager.update(subtaskWithChanges);
             return subtaskList.get(taskId);
         } else {
             return null;
@@ -224,6 +232,7 @@ public class InMemoryTaskManager implements TaskManager {
             }
             epicList.remove(taskId);
             epicList.put(taskId, epicWithChanges);
+            historyManager.update(epicWithChanges);
             return epicList.get(taskId);
         } else {
             return null;
@@ -279,6 +288,7 @@ public class InMemoryTaskManager implements TaskManager {
     private void deleteSubtasksForEpic(Epic epic) {
         if (epic.getIncludeSubtaskList() != null) {
             for (int subtaskId : epic.getIncludeSubtaskList()) {
+                historyManager.remove(subtaskId);
                 subtaskList.remove(subtaskId);
             }
         }
