@@ -6,8 +6,9 @@ import ru.yandex.practicum.managers.taskmanager.InMemoryTaskManager;
 public class Managers {
     public static InMemoryTaskManager taskManaget;
     public static InMemoryHistoryManager historyManager;
-    public static InMemoryTaskManager getDefault(){
-        if (taskManaget == null){
+
+    public static InMemoryTaskManager getDefault() {
+        if (taskManaget == null) {
             InMemoryHistoryManager historyManager = getDefaultHistory();
             taskManaget = new InMemoryTaskManager(historyManager);
 
@@ -15,8 +16,8 @@ public class Managers {
         return taskManaget;
     }
 
-    public static InMemoryHistoryManager getDefaultHistory(){
-        if (historyManager == null){
+    public static InMemoryHistoryManager getDefaultHistory() {
+        if (historyManager == null) {
             historyManager = new InMemoryHistoryManager();
         }
         return historyManager;
