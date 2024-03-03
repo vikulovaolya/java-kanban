@@ -55,3 +55,5 @@ s
 Csrc/ru/yandex/practicum/managers/historymanager/HistoryManager.java,3\2\32b9783de28d36a65c8dc6b123c2a38e85569849
 m
 =src/ru/yandex/practicum/managers/taskmanager/TaskManager.java,3\a\3ae80ea3446188bf911b53282a5b163ccdf85d58
+i
+9src/ru/yandex/practicum/managers/historymanager/Node.java,e\e\ee57732261b8e3d78098289af88b28bc9f8349b1
