@@ -2,6 +2,7 @@ package ru.yandex.practicum.tasks;
 
 public class Subtask extends Task {
     private int epicId;
+
     public Subtask(int id, String name, String description, TaskState state, int epicId) {
         super(id, name, description, state);
         this.state = state;
@@ -16,11 +17,11 @@ public class Subtask extends Task {
     @Override
     public String toString() {
         return "Subtask{" +
-                "id=" + id +
-                ", epicId=" + epicId +
+                "epicId=" + epicId +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", state=" + state +
+                ", id=" + id +
                 '}';
     }
 

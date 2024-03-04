@@ -36,6 +36,7 @@ public class Main {
         Epic epic1 = new Epic(taskManager.getEpic(4));
         epic1.setName("Эпик 4(обновленный)");
         epic1.setDescription("Текст эпика 1 (обновленный)");
+
         taskManager.updateEpic(4, epic1);
         Epic epic2 = new Epic(taskManager.getEpic(5));
         epic2.setName("Эпик 5(обновленный)");
@@ -56,15 +57,17 @@ public class Main {
         subtask2.setName("Подзадача 11 (обновление статуса)");
         subtask2.setState(TaskState.IN_PROGRESS);
         taskManager.updateSubtask(11, subtask2);
-        //for (int i = 0; i < 8; i++){
-        //    taskManager.getEpic(4);
-        //}
+        for (int i = 0; i < 8; i++) {
+            taskManager.getEpic(4);
+        }
         taskManager.getEpic(9);
         taskManager.getTask(2);
         taskManager.getTask(2);
         taskManager.getTask(1);
         //taskManager.clearEpicList();
         //taskManager.clearSubtaskList();
+
+
 
         while (true) {
             printMenu();
