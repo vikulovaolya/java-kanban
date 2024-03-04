@@ -189,7 +189,6 @@ public class InMemoryTaskManager implements TaskManager {
         if (taskList.containsKey(taskId)) {
             taskList.remove(taskId);
             taskList.put(taskId, taskWithChanges);
-            historyManager.update(taskWithChanges);
             return taskList.get(taskId);
         } else {
             return null;
@@ -212,7 +211,6 @@ public class InMemoryTaskManager implements TaskManager {
             subtaskList.remove(taskId);
             subtaskList.put(taskId, subtaskWithChanges);
             updateEpic(subtaskWithChanges.getEpicId(), epicList.get(subtaskWithChanges.getEpicId()));
-            historyManager.update(subtaskWithChanges);
             return subtaskList.get(taskId);
         } else {
             return null;
@@ -232,7 +230,6 @@ public class InMemoryTaskManager implements TaskManager {
             }
             epicList.remove(taskId);
             epicList.put(taskId, epicWithChanges);
-            historyManager.update(epicWithChanges);
             return epicList.get(taskId);
         } else {
             return null;

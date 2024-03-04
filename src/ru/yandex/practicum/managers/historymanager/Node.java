@@ -4,10 +4,10 @@ import ru.yandex.practicum.tasks.Task;
 
 public class Node {
     protected Task task;
-    protected Integer prev;
-    protected Integer next;
+    protected Node prev;
+    protected Node next;
 
-    public Node(Task task, Integer prev, Integer next) {
+    public Node(Task task, Node prev, Node next) {
         this.task = task;
         this.prev = prev;
         this.next = next;
@@ -17,11 +17,11 @@ public class Node {
         return task;
     }
 
-    public Integer getPrev() {
+    public Node getPrev() {
         return prev;
     }
 
-    public Integer getNext() {
+    public Node getNext() {
         return next;
     }
 
@@ -29,11 +29,11 @@ public class Node {
         this.task = task;
     }
 
-    public void setPrev(Integer prev) {
+    public void setPrev(Node prev) {
         this.prev = prev;
     }
 
-    public void setNext(Integer next) {
+    public void setNext(Node next) {
         this.next = next;
     }
 }

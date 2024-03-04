@@ -22,67 +22,37 @@ public class InMemoryHistoryManager implements HistoryManager {
 
     @Override
     public void remove(int id) {
-        Node node = taskHistoryMap.get(id);
-        if (node != null) {
-            removeNode(node);
-            taskHistoryMap.remove(id);
-        }
-    }
-
-    @Override
-    public void update(Task task) {
-        int taskId = task.getId();
-        Node node = taskHistoryMap.get(taskId);
-        if (node != null) {
-            node.setTask(task);
-        }
+        removeNode(id);
     }
 
     @Override
     public void add(Task task) {
-        int taskId = task.getId();
-        if (taskHistoryMap.size() == 0) {
-            Node node = new Node(task, null, null);
+        if (task == null) {
+            return;
+        }
+        final int id = task.getId();
+        removeNode(id);
+        linkLast(task);
+        taskHistoryMap.put(id, lastNodeInHistory);
+    }
+
+    private void linkLast(Task task) {
+        final Node node = new Node(task, lastNodeInHistory, null);
+        if (firstNodeInHistory == null) {
             firstNodeInHistory = node;
-            lastNodeInHistory = node;
-            taskHistoryMap.put(taskId,node);
         } else {
-            if (taskHistoryMap.get(taskId) != lastNodeInHistory) {
-                if (taskHistoryMap.containsKey(taskId)) {
-                    Node node = taskHistoryMap.get(taskId);
-                    removeNode(node);
-                }
-                linkLast(task);
-            }
+            lastNodeInHistory.setNext(node);
         }
-    }
-
-    void linkLast(Task task) {
-        Node oldLastNode = lastNodeInHistory;
-        int taskId = task.getId();
-        oldLastNode.setNext(taskId);
-        Task taskInOldLastNode = oldLastNode.getTask();
-        Node node = new Node(task, taskInOldLastNode.getId(), null);
         lastNodeInHistory = node;
-        taskHistoryMap.put(taskId,node);
     }
 
-    public void removeNode(Node node) {
-        Integer prevNodeId = node.getPrev();
-        Integer nextNodeId = node.getNext();
-        Node prevNode;
-        Node nextNode;
-        if (prevNodeId != null) {
-            prevNode = taskHistoryMap.get(prevNodeId);
-        } else {
-            prevNode = null;
+    private void removeNode(int id) {
+        final Node node = taskHistoryMap.remove(id);
+        if (node == null) {
+            return;
         }
-        if (nextNodeId != null) {
-            nextNode = taskHistoryMap.get(nextNodeId);
-        } else {
-            nextNode = null;
-        }
-
+        Node prevNode = node.getPrev();
+        Node nextNode = node.getNext();
         if (prevNode == null && nextNode == null) {
             firstNodeInHistory = null;
             lastNodeInHistory = null;
@@ -93,33 +63,18 @@ public class InMemoryHistoryManager implements HistoryManager {
             lastNodeInHistory = prevNode;
             prevNode.setNext(null);
         } else {
-            Integer nextId = nextNode.getTask().getId();
-            prevNode.setNext(nextId);
-            Integer prevId = prevNode.getTask().getId();
-            nextNode.setPrev(prevId);
+            prevNode.setNext(nextNode);
+            nextNode.setPrev(prevNode);
         }
-        Integer nodeId = node.getTask().getId();
-        taskHistoryMap.remove(nodeId);
     }
 
     public ArrayList<Task> getTasks() {
         ArrayList<Task> taskHistory = new ArrayList<>();
         Node node = firstNodeInHistory;
-        if (firstNodeInHistory == null) {
-            return null;
-        } else {
-            while (true) {
-                Task task = node.getTask();
-                taskHistory.add(task);
-                Integer nextNodeId = node.getNext();
-                if (nextNodeId == null) {
-                    break;
-                } else {
-                    node = taskHistoryMap.get(nextNodeId);
-                }
-
-            }
-            return taskHistory;
+        while (node != null) {
+            taskHistory.add(node.task);
+            node = node.next;
         }
+        return taskHistory;
     }
 }
