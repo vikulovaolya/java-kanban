@@ -1,0 +1,11 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‰¼œíä1
+]	java:S125"<This block of commented-out lines of code should be removed.(™¸Ñøÿÿÿÿ8ûÙôïä1
+J
+java:S11855"(Remove this method to simply inherit it.(››‡¤şÿÿÿÿ8€öĞïä1
+E
+java:S1185:"(Remove this method to simply inherit it.(Î´ğ8öĞïä1
+J
+java:S1185?"(Remove this method to simply inherit it.(ü˜êíıÿÿÿÿ8öĞïä1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ûÙôïä1

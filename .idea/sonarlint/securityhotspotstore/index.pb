@@ -57,3 +57,7 @@ m
 =src/ru/yandex/practicum/managers/taskmanager/TaskManager.java,3\a\3ae80ea3446188bf911b53282a5b163ccdf85d58
 i
 9src/ru/yandex/practicum/managers/historymanager/Node.java,e\e\ee57732261b8e3d78098289af88b28bc9f8349b1
+w
+Gsrc/ru/yandex/practicum/managers/taskmanager/FileBackedTaskManager.java,c\4\c426f5f7994b1398cd40965292e4188856064d0e
+j
+:src/ru/yandex/practicum/managers/taskmanager/TaskType.java,1\c\1c5d2fe3eb1b0d97573ff5bf8809afe5b36e3788

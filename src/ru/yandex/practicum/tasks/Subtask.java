@@ -1,5 +1,7 @@
 package ru.yandex.practicum.tasks;
 
+import ru.yandex.practicum.managers.taskmanager.TaskType;
+
 public class Subtask extends Task {
     private int epicId;
 
@@ -7,6 +9,7 @@ public class Subtask extends Task {
         super(id, name, description, state);
         this.state = state;
         this.epicId = epicId;
+        this.type = TaskType.SUBTASK;
     }
 
     public Subtask(Subtask another) {
@@ -15,14 +18,8 @@ public class Subtask extends Task {
     }
 
     @Override
-    public String toString() {
-        return "Subtask{" +
-                "epicId=" + epicId +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", state=" + state +
-                ", id=" + id +
-                '}';
+    public String toString() { //id,type,name,status,description,epic
+        return id + "," + type + "," + name + "," + state + "," + description + "," + epicId;
     }
 
     public int getEpicId() {

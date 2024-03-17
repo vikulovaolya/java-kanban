@@ -1,5 +1,7 @@
 package ru.yandex.practicum.tasks;
 
+import ru.yandex.practicum.managers.taskmanager.TaskType;
+
 import java.util.ArrayList;
 
 public class Epic extends Task {
@@ -9,6 +11,7 @@ public class Epic extends Task {
         super(id, name, description, state);
         this.state = state;
         this.includeSubtaskList = includeSubtaskList;
+        this.type = TaskType.EPIC;
     }
 
     public Epic(Epic another) {
@@ -18,13 +21,7 @@ public class Epic extends Task {
 
     @Override
     public String toString() {
-        return "Epic{" +
-                "includeSubtaskList=" + includeSubtaskList +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", state=" + state +
-                ", id=" + id +
-                '}';
+        return id + "," + type + "," + name + "," + state + "," + description + ",";
     }
 
     public ArrayList<Integer> getIncludeSubtaskList() {

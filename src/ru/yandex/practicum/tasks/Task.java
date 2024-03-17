@@ -1,9 +1,12 @@
 package ru.yandex.practicum.tasks;
 
+import ru.yandex.practicum.managers.taskmanager.TaskType;
+
 public class Task {
     protected String name;
     protected String description;
     protected TaskState state;
+    protected TaskType type;
     protected int id;
     protected Task prev;
     protected Task next;
@@ -13,6 +16,7 @@ public class Task {
         this.name = name;
         this.description = description;
         this.state = state;
+        this.type = TaskType.TASK;
     }
 
     public Task(Task another) {
@@ -20,16 +24,12 @@ public class Task {
         this.name = another.name;
         this.description = another.description;
         this.state = another.state;
+        this.type = TaskType.TASK;
     }
 
     @Override
-    public String toString() {
-        return "Task{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", state=" + state +
-                ", id=" + id +
-                '}';
+    public String toString() { //id,type,name,status,description,epic
+        return id + "," + type + "," + name + "," + state + "," + description + ",";
     }
 
     public String getName() {
