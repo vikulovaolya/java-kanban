@@ -21,7 +21,7 @@ public class Main {
         int subtaskId;
         TaskState state = null;
 
-        /* Данные для быстрого тестирования */
+        /* Данные для быстрого тестирования
         taskManager.setTask("Задача 1", "Текст задачи 1", TaskState.NEW);
         taskManager.setTask("Задача 2", "Текст задачи 2", TaskState.IN_PROGRESS);
         taskManager.setTask("Задача 3", "Текст задачи 3", TaskState.DONE);
@@ -66,6 +66,7 @@ public class Main {
         taskManager.getTask(1);
         //taskManager.clearEpicList();
         //taskManager.clearSubtaskList();
+        //taskManager.setTask("Задача 12", "Текст задачи 12", TaskState.NEW);*/
 
 
 
@@ -76,7 +77,6 @@ public class Main {
             String command = scanner.next();
             switch (command) {
                 case "CREATE_TASK":
-                    System.out.println("Введите название задачи");
                     System.out.println("Введите название задачи");
                     name = scanner.next();
                     System.out.println("Введите текс задачи");

@@ -1,11 +1,12 @@
 
-y
-java:S1104"WMake taskManaget a static final constant or non-public and provide accessors if needed.(×ŸÑıÿÿÿÿ8Ï®÷Ğ1
+t
+java:S1104"WMake taskManaget a static final constant or non-public and provide accessors if needed.(ØéÕÔ8§ƒïŒå1
 |
-java:S1104"ZMake historyManager a static final constant or non-public and provide accessors if needed.(‚¥ûƒúÿÿÿÿ8Ï®÷Ğ1
-S
-java:S1444"1Make this "public static taskManaget" field final(×ŸÑıÿÿÿÿ8Ï®÷Ğ1
+java:S1104	"ZMake historyManager a static final constant or non-public and provide accessors if needed.(‚¥ûƒúÿÿÿÿ8§ƒïŒå1
+N
+java:S1444"1Make this "public static taskManaget" field final(ØéÕÔ8§ƒïŒå1
 V
-java:S1444"4Make this "public static historyManager" field final(‚¥ûƒúÿÿÿÿ8Ï®÷Ğ1
+java:S1444	"4Make this "public static historyManager" field final(‚¥ûƒúÿÿÿÿ8§ƒïŒå1
 \
-java:S1118":Add a private constructor to hide the implicit public one.(¹ÊãŞúÿÿÿÿ8—Ï®÷Ğ1
+java:S1118":Add a private constructor to hide the implicit public one.(¹ÊãŞúÿÿÿÿ8©ƒïŒå1
+X	java:S125"<This block of commented-out lines of code should be removed.(Â«°8±ƒïŒå1

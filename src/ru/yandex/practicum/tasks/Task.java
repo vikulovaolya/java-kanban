@@ -7,6 +7,7 @@ public class Task {
     protected String description;
     protected TaskState state;
     protected TaskType type;
+
     protected int id;
     protected Task prev;
     protected Task next;
@@ -78,5 +79,9 @@ public class Task {
 
     public void setNext(Task next) {
         this.next = next;
+    }
+
+    public TaskType getType() {
+        return type;
     }
 }

@@ -61,3 +61,7 @@ w
 Gsrc/ru/yandex/practicum/managers/taskmanager/FileBackedTaskManager.java,c\4\c426f5f7994b1398cd40965292e4188856064d0e
 j
 :src/ru/yandex/practicum/managers/taskmanager/TaskType.java,1\c\1c5d2fe3eb1b0d97573ff5bf8809afe5b36e3788
+?
+managerFile.csv,2\2\22cbbe80475afab472266495cf6c4bcfc70cdab3
+F
+historyManagerFile.csv,a\a\aaa42fb60c8ea6d9516d7eec2a54ade2d9edbdb1
