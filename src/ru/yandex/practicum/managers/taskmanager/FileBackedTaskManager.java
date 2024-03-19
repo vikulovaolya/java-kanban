@@ -19,19 +19,19 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
         this.managerFile = managerFile;
     }
 
-    public void loadFromFile (File managerFileName) {
+    public void loadFromFile(File managerFileName) {
         if (managerFile.exists() && !managerFile.isDirectory()) {
             int numberOfLine = 0;
             try (FileReader reader = new FileReader(managerFileName); BufferedReader br = new BufferedReader(reader)) {
                 while (br.ready()) {
                     String line = br.readLine();
-                    if (numberOfLine != 0){
-                        if (!line.equals("")){
+                    if (numberOfLine != 0) {
+                        if (!line.equals("")) {
                             String firstSymbolStr = String.valueOf(line.charAt(0));
                             if (!firstSymbolStr.equals("#")) {
                                 Task task = csvTaskFormatted.fromString(line);
                                 int taskId = task.getId();
-                                if (task != null){
+                                if (task != null) {
                                     if (task.getType().equals(TaskType.TASK)) {
                                         taskList.put(taskId, task);
                                     } else if (task.getType().equals(TaskType.SUBTASK)) {
@@ -41,7 +41,7 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
                                     }
                                 }
                             } else {
-                                ArrayList <Integer> historyIdTasks = csvTaskFormatted.historyFromString(line);
+                                ArrayList<Integer> historyIdTasks = csvTaskFormatted.historyFromString(line);
                                 for (Integer taskId: historyIdTasks) {
                                     if (taskList.containsKey(taskId)) {
                                         Task task = taskList.get(taskId);
@@ -61,13 +61,13 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
                     }
                     numberOfLine++;
                 }
-            } catch (IOException e){
+            } catch (IOException e) {
                 System.out.println("Произошла ошибка во время чтения файла.");
             }
         }
     }
 
-    private void save () {
+    private void save() {
         if (!(managerFile.exists() && !managerFile.isDirectory())) {
             managerFile = new File("resources\\tasks.csv");
         }
@@ -90,8 +90,8 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
             }
             fileWriter.write("#");
             ArrayList<Task> historyList = getHistory();
-            for (Task task: historyList){
-                if (task != historyList.get(0)){
+            for (Task task: historyList) {
+                if (task != historyList.get(0)) {
                     fileWriter.write(",");
                 }
                 int taskId = task.getId();
