@@ -10,10 +10,10 @@ public class Managers {
     public static FileBackedTaskManager taskManaget;
     public static InMemoryHistoryManager historyManager;
 
-    public static InMemoryTaskManager getDefault() {
+    public static InMemoryTaskManager getDefault(String savedTasksFile) {
         if (taskManaget == null) {
             InMemoryHistoryManager historyManager = getDefaultHistory();
-            taskManaget = new FileBackedTaskManager(historyManager, new File("resources\\tasks.csv")); //InMemoryTaskManager(historyManager);
+            taskManaget = new FileBackedTaskManager(historyManager, new File(savedTasksFile)); //InMemoryTaskManager(historyManager);
             taskManaget.loadFromFile(taskManaget.getManagerFile());
         }
         return taskManaget;

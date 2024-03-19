@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        InMemoryTaskManager taskManager = Managers.getDefault();
+        InMemoryTaskManager taskManager = Managers.getDefault("resources\\tasks.csv");
 
         Scanner scanner = new Scanner(System.in);
         int taskId;
