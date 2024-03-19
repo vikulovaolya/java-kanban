@@ -17,11 +17,18 @@ public class Epic extends Task {
     public Epic(Epic another) {
         super(another);
         this.includeSubtaskList = another.includeSubtaskList;
+
     }
 
     @Override
     public String toString() {
-        return id + "," + type + "," + name + "," + state + "," + description + ",";
+        return "Epic{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", state=" + state +
+                ", type=" + type +
+                ", id=" + id +
+                '}';
     }
 
     public ArrayList<Integer> getIncludeSubtaskList() {
@@ -31,4 +38,5 @@ public class Epic extends Task {
     public void setIncludeSubtaskList(ArrayList<Integer> includeSubtaskList) {
         this.includeSubtaskList = includeSubtaskList;
     }
+
 }

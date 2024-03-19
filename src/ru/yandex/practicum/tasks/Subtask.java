@@ -18,8 +18,15 @@ public class Subtask extends Task {
     }
 
     @Override
-    public String toString() { //id,type,name,status,description,epic
-        return id + "," + type + "," + name + "," + state + "," + description + "," + epicId;
+    public String toString() {
+        return "Subtask{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", state=" + state +
+                ", type=" + type +
+                ", id=" + id +
+                ", epicId=" + epicId +
+                '}';
     }
 
     public int getEpicId() {
@@ -29,5 +36,4 @@ public class Subtask extends Task {
     public void setEpicId(int epicId) {
         this.epicId = epicId;
     }
-
 }

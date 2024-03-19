@@ -1,0 +1,17 @@
+
+’
+java:S1319U"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¿àÁ¥ÿÿÿÿÿ8ğÛä·å1
+|
+java:S1488$"_Immediately return this expression instead of assigning it to the temporary variable "newTask".(Ìú8€Üä·å1
+„
+java:S1488-"bImmediately return this expression instead of assigning it to the temporary variable "newSubtask".(É‰°ıÿÿÿÿ8€Üä·å1
+~
+java:S14880"\Immediately return this expression instead of assigning it to the temporary variable "epic".(¶ÉíÑüÿÿÿÿ8€Üä·å1
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(á¯“Í8‘Üä·å1
+R
+java:S2209F"5Change this instance-reference to a static reference.(š—ì8ŸÜä·å1
+Q
+java:S2209H"5Change this instance-reference to a static reference.(¥ä°H8ŸÜä·å1
+W
+java:S2209J"5Change this instance-reference to a static reference.(ûĞ®Ùüÿÿÿÿ8 Üä·å1

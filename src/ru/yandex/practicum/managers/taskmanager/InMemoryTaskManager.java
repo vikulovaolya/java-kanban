@@ -11,8 +11,8 @@ import java.util.HashMap;
 
 public class InMemoryTaskManager implements TaskManager {
 
-    public HistoryManager historyManager;
-    public int counterId = 100;
+    public static HistoryManager historyManager;
+    public int counterId = 0;
     public HashMap<Integer, Task> taskList = new HashMap<>();
     public HashMap<Integer, Subtask> subtaskList = new HashMap<>();
     public HashMap<Integer, Epic> epicList = new HashMap<>();
@@ -37,7 +37,8 @@ public class InMemoryTaskManager implements TaskManager {
             return null;
         }
         subtaskList.put(taskId, subtask);
-        ArrayList<Integer> arrayOfSubtasksForEpic = epicList.get(epicId).getIncludeSubtaskList();
+        Epic epic = epicList.get(epicId);
+        ArrayList<Integer> arrayOfSubtasksForEpic = epic.getIncludeSubtaskList();
 
         if (arrayOfSubtasksForEpic != null) {
             arrayOfSubtasksForEpic.add(taskId);
@@ -171,7 +172,8 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public void deleteSubtask(int taskId) {
         Subtask subtask = subtaskList.get(taskId);
-        deleteConnectionWithSubtaskForEpic(taskId, subtask.getEpicId());
+        int subtaskEpicId = subtask.getEpicId();
+        deleteConnectionWithSubtaskForEpic(taskId, subtaskEpicId);
         subtaskList.remove(taskId);
         historyManager.remove(taskId);
     }

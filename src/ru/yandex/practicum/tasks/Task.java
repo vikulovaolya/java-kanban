@@ -9,8 +9,7 @@ public class Task {
     protected TaskType type;
 
     protected int id;
-    protected Task prev;
-    protected Task next;
+
 
     public Task(int id, String name, String description, TaskState state) {
         this.id = id;
@@ -29,8 +28,14 @@ public class Task {
     }
 
     @Override
-    public String toString() { //id,type,name,status,description,epic
-        return id + "," + type + "," + name + "," + state + "," + description + ",";
+    public String toString() {
+        return "Task{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", state=" + state +
+                ", type=" + type +
+                ", id=" + id +
+                '}';
     }
 
     public String getName() {
@@ -65,21 +70,6 @@ public class Task {
         this.id = id;
     }
 
-    public Task getPrev() {
-        return prev;
-    }
-
-    public Task getNext() {
-        return next;
-    }
-
-    public void setPrev(Task prev) {
-        this.prev = prev;
-    }
-
-    public void setNext(Task next) {
-        this.next = next;
-    }
 
     public TaskType getType() {
         return type;

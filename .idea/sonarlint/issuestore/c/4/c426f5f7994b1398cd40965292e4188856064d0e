@@ -1,32 +1,7 @@
 
-h	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8öµÂå1
-|
-java:S1488\"_Immediately return this expression instead of assigning it to the temporary variable "newTask".(Ìú8œ»Áå1
-„
-java:S1488e"bImmediately return this expression instead of assigning it to the temporary variable "newSubtask".(É‰°ıÿÿÿÿ8œ»Áå1
-~
-java:S1488h"\Immediately return this expression instead of assigning it to the temporary variable "epic".(¶ÉíÑüÿÿÿÿ8œ»Áå1
-d
-java:S22597"BA "NullPointerException" could be thrown; "task" is nullable here.(èõ¨íúÿÿÿÿ8Ë»Áå1
-S
-java:S25898"7Remove this expression which always evaluates to "true"(ûöø.8Ë»Áå1
-]	java:S125"<This block of commented-out lines of code should be removed.(êÇ³üÿÿÿÿ8¤èÂå1
-]	java:S125."<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8Ë»Áå1
-G	java:S106E"+Replace this use of System.out by a logger.(Ÿá«‘8Ë»Áå1
-W	java:S125q"<This block of commented-out lines of code should be removed.(ÛÏı8Û»Áå1
-Y	java:S125‡"<This block of commented-out lines of code should be removed.(¡Õ±š8Û»Áå1
-M
-java:S1128
-"0Remove this unused import 'java.nio.file.Files'.(‚ƒü8Û»Áå1
-L
-java:S1128"/Remove this unused import 'java.nio.file.Path'.(×²êÂ8Û»Áå1
-M
-java:S1128"0Remove this unused import 'java.nio.file.Paths'.(áè°¯8Û»Áå1
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Û»Áå1
-L
-java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8Û»Áå1
-R
-java:S1128"0Remove this unused import 'java.awt.Event.HOME'.(•¥µüÿÿÿÿ8Û»Áå1
-\
-java:S1068":Remove this unused "historyManagerFileName" private field.(èª¸üşÿÿÿÿ8¾èÂå1
+g	java:S112i"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8³ü„¸å1
+Q
+java:S1066!"/Merge this if statement with the enclosing one.(«¡’¬ÿÿÿÿÿ8µü„¸å1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 49 to the 15 allowed.(«ÿ8ìı„¸å1
+G	java:S106E"+Replace this use of System.out by a logger.(Ÿá«‘8ğı„¸å1

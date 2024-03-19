@@ -65,3 +65,13 @@ j
 managerFile.csv,2\2\22cbbe80475afab472266495cf6c4bcfc70cdab3
 F
 historyManagerFile.csv,a\a\aaa42fb60c8ea6d9516d7eec2a54ade2d9edbdb1
+r
+Bsrc/ru/yandex/practicum/managers/taskmanager/CSVTaskFormatter.java,6\7\67e6d802791910cf9b06a0c4bb4bc331e3e10f36
+C
+resources/tasks.csv,b\5\b54a3ee33136e3562d10118336fc0fce26a02b06
+R
+"resources/tasks — копия.csv,0\3\0346d8809111e8e218f721c24af840c496bcf2ad
+I
+resources/tasks-test1.csv,4\a\4a1b8fd2323ab7100474812fbced0c884d681e71
+k
+;src/ru/yandex/practicum/exception/ManagerSaveException.java,a\a\aac519a258a859c7ee533056fd448c4821afed2e

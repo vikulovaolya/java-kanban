@@ -14,7 +14,6 @@ public class Main {
     public static void main(String[] args) {
         InMemoryTaskManager taskManager = Managers.getDefault();
 
-
         Scanner scanner = new Scanner(System.in);
         int taskId;
         int epicId;
@@ -63,10 +62,10 @@ public class Main {
         taskManager.getEpic(9);
         taskManager.getTask(2);
         taskManager.getTask(2);
-        taskManager.getTask(1);
+        taskManager.getTask(1);*/
         //taskManager.clearEpicList();
         //taskManager.clearSubtaskList();
-        //taskManager.setTask("Задача 12", "Текст задачи 12", TaskState.NEW);*/
+        //taskManager.setTask("Задача 12", "Текст задачи 12", TaskState.NEW);
 
 
 
