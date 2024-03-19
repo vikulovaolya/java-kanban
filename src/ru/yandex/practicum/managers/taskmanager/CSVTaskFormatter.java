@@ -20,7 +20,7 @@ public class CSVTaskFormatter {
         TaskState taskState;
         try {
             taskId = parseInt(taskParametres[0]);
-        } catch (NumberFormatException  exp){
+        } catch (NumberFormatException  exp) {
             exp.getMessage();
         }
         if (taskParametres[3].equals("NEW")) {
@@ -58,7 +58,7 @@ public class CSVTaskFormatter {
         int epicId = 0;
         TaskState taskState = task.getState();
         String taskStringState = null;
-        if (taskType.equals(TaskType.TASK)){
+        if (taskType.equals(TaskType.TASK)) {
             taskStringType = "TASK";
         } else if (taskType.equals(TaskType.SUBTASK)) {
             taskStringType = "SUBTASK";
@@ -76,17 +76,17 @@ public class CSVTaskFormatter {
         }
          String taskString = task.getId() + "," + taskStringType + "," + task.getName() + "," + taskStringState + ","
                  + task.getDescription() + ",";
-        if (epicId != 0){
-            taskString = taskString+ epicId;
+        if (epicId != 0) {
+            taskString = taskString + epicId;
         }
          return taskString;
     }
 
     public ArrayList<Integer> historyFromString(String str) {
-        String historyStr = str.substring( 1, str.length());
+        String historyStr = str.substring(1, str.length());
         String [] historyStrSplit = historyStr.split(",");
         ArrayList<Integer> historyIdTasks = new ArrayList<>();
-        for (int i = 0; i < historyStrSplit.length; i++){
+        for (int i = 0; i < historyStrSplit.length; i++) {
             int taskId = Integer.parseInt(historyStrSplit[i]);
             historyIdTasks.add(taskId);
         }
