@@ -10,7 +10,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-public class FileBackedTaskManager extends InMemoryTaskManager{
+public class FileBackedTaskManager extends InMemoryTaskManager {
     private File managerFile;
     private static CSVTaskFormatter csvTaskFormatted = new CSVTaskFormatter();
 
@@ -19,10 +19,10 @@ public class FileBackedTaskManager extends InMemoryTaskManager{
         this.managerFile = managerFile;
     }
 
-    public void loadFromFile (File managerFileName){
-        if (managerFile.exists() && !managerFile.isDirectory()){
+    public void loadFromFile (File managerFileName) {
+        if (managerFile.exists() && !managerFile.isDirectory()) {
             int numberOfLine = 0;
-            try (FileReader reader = new FileReader(managerFileName); BufferedReader br = new BufferedReader(reader)){
+            try (FileReader reader = new FileReader(managerFileName); BufferedReader br = new BufferedReader(reader)) {
                 while (br.ready()) {
                     String line = br.readLine();
                     if (numberOfLine != 0){
@@ -32,24 +32,24 @@ public class FileBackedTaskManager extends InMemoryTaskManager{
                                 Task task = csvTaskFormatted.fromString(line);
                                 int taskId = task.getId();
                                 if (task != null){
-                                    if (task.getType().equals(TaskType.TASK)){
+                                    if (task.getType().equals(TaskType.TASK)) {
                                         taskList.put(taskId, task);
-                                    } else if (task.getType().equals(TaskType.SUBTASK)){
+                                    } else if (task.getType().equals(TaskType.SUBTASK)) {
                                         subtaskList.put(taskId, (Subtask) task);
-                                    } else if (task.getType().equals(TaskType.EPIC)){
+                                    } else if (task.getType().equals(TaskType.EPIC)) {
                                         epicList.put(taskId, (Epic) task);
                                     }
                                 }
                             } else {
                                 ArrayList <Integer> historyIdTasks = csvTaskFormatted.historyFromString(line);
-                                for (Integer taskId: historyIdTasks){
-                                    if (taskList.containsKey(taskId)){
+                                for (Integer taskId: historyIdTasks) {
+                                    if (taskList.containsKey(taskId)) {
                                         Task task = taskList.get(taskId);
                                         historyManager.add(task);
-                                    } else if (subtaskList.containsKey(taskId)){
+                                    } else if (subtaskList.containsKey(taskId)) {
                                         Subtask subtask = subtaskList.get(taskId);
                                         historyManager.add(subtask);
-                                    } else if (epicList.containsKey(taskId)){
+                                    } else if (epicList.containsKey(taskId)) {
                                         Epic epic = epicList.get(taskId);
                                         historyManager.add(epic);
                                     }
