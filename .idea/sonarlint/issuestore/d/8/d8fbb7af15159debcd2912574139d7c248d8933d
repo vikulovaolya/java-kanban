@@ -9,8 +9,8 @@ java:S1319"hThe type of "subtaskList" should be an interface such as "Map" rat
 java:S1319"eThe type of "epicList" should be an interface such as "Map" rather than the implementation "HashMap".(í¾ù¡ûÿÿÿÿ8˜·ã®å1
 w
 java:S1104"ZMake historyManager a static final constant or non-public and provide accessors if needed.(ãŒÒö8™·ã®å1
-w
-java:S1104"UMake counterId a static final constant or non-public and provide accessors if needed.(ğúÏÑùÿÿÿÿ8™·ã®å1
+r
+java:S1104"UMake counterId a static final constant or non-public and provide accessors if needed.(ĞŞ 8™·ã®å1
 v
 java:S1104"TMake taskList a static final constant or non-public and provide accessors if needed.(ª¥úùÿÿÿÿ8™·ã®å1
 t
