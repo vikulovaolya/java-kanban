@@ -1,0 +1,11 @@
+
+Т
+java:S1319C"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(┐р┴е     8п║осх1
+Б
+java:S1488"_Immediately return this expression instead of assigning it to the temporary variable "newTask".( ┌▐╪√    8п║осх1
+Д
+java:S1488'"bImmediately return this expression instead of assigning it to the temporary variable "newSubtask".(╖л█є     8п║осх1
+y
+java:S1488*"\Immediately return this expression instead of assigning it to the temporary variable "epic".(Ц№єн8п║осх1
+Ю
+java:S1186"АAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(спУ═8╛║осх1

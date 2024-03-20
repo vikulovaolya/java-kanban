@@ -12,7 +12,7 @@ class TaskTest {
     public static InMemoryTaskManager taskManager;
     @BeforeAll
     public static void beforeEach(){
-        taskManager = Managers.getDefault();
+        taskManager = Managers.getDefault("х");
     }
 
     @Test

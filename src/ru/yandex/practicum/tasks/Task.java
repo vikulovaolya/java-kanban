@@ -1,32 +1,40 @@
 package ru.yandex.practicum.tasks;
 
+import ru.yandex.practicum.managers.taskmanager.TaskType;
+
 public class Task {
     protected String name;
     protected String description;
     protected TaskState state;
+    protected TaskType type;
+
     protected int id;
+
 
     public Task(int id, String name, String description, TaskState state) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.state = state;
+        this.type = TaskType.TASK;
     }
 
-    public Task (Task another){
+    public Task(Task another) {
         this.id = another.id;
         this.name = another.name;
         this.description = another.description;
         this.state = another.state;
+        this.type = TaskType.TASK;
     }
 
     @Override
     public String toString() {
         return "Task{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", state=" + state +
+                ", type=" + type +
+                ", id=" + id +
                 '}';
     }
 
@@ -52,5 +60,18 @@ public class Task {
 
     public void setState(TaskState state) {
         this.state = state;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public TaskType getType() {
+        return type;
     }
 }

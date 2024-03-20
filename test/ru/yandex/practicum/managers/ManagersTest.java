@@ -12,7 +12,7 @@ import static ru.yandex.practicum.managers.Managers.*;
 class ManagersTest {
     @Test
     public void shouldCreateDefaultTaskManager(){
-        InMemoryTaskManager taskManager = Managers.getDefault();
+        InMemoryTaskManager taskManager = Managers.getDefault("х");
         assertNotNull(taskManager, "Ошибка: Создается taskManager = null");
     }
 

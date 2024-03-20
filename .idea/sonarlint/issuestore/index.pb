@@ -55,3 +55,25 @@ s
 Csrc/ru/yandex/practicum/managers/historymanager/HistoryManager.java,3\2\32b9783de28d36a65c8dc6b123c2a38e85569849
 m
 =src/ru/yandex/practicum/managers/taskmanager/TaskManager.java,3\a\3ae80ea3446188bf911b53282a5b163ccdf85d58
+i
+9src/ru/yandex/practicum/managers/historymanager/Node.java,e\e\ee57732261b8e3d78098289af88b28bc9f8349b1
+w
+Gsrc/ru/yandex/practicum/managers/taskmanager/FileBackedTaskManager.java,c\4\c426f5f7994b1398cd40965292e4188856064d0e
+j
+:src/ru/yandex/practicum/managers/taskmanager/TaskType.java,1\c\1c5d2fe3eb1b0d97573ff5bf8809afe5b36e3788
+?
+managerFile.csv,2\2\22cbbe80475afab472266495cf6c4bcfc70cdab3
+F
+historyManagerFile.csv,a\a\aaa42fb60c8ea6d9516d7eec2a54ade2d9edbdb1
+r
+Bsrc/ru/yandex/practicum/managers/taskmanager/CSVTaskFormatter.java,6\7\67e6d802791910cf9b06a0c4bb4bc331e3e10f36
+C
+resources/tasks.csv,b\5\b54a3ee33136e3562d10118336fc0fce26a02b06
+R
+"resources/tasks — копия.csv,0\3\0346d8809111e8e218f721c24af840c496bcf2ad
+I
+resources/tasks-test1.csv,4\a\4a1b8fd2323ab7100474812fbced0c884d681e71
+k
+;src/ru/yandex/practicum/exception/ManagerSaveException.java,a\a\aac519a258a859c7ee533056fd448c4821afed2e
+l
+<src/ru/yandex/practicum/exceptions/ManagerSaveException.java,9\c\9cd7592102b9e826dc6577594954c62db2b859db

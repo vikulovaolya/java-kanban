@@ -12,8 +12,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        InMemoryTaskManager taskManager = Managers.getDefault();
-
+        InMemoryTaskManager taskManager = Managers.getDefault("resources\\tasks.csv");
 
         Scanner scanner = new Scanner(System.in);
         int taskId;
@@ -21,7 +20,7 @@ public class Main {
         int subtaskId;
         TaskState state = null;
 
-        /* Данные для быстрого тестирования */
+        /* Данные для быстрого тестирования
         taskManager.setTask("Задача 1", "Текст задачи 1", TaskState.NEW);
         taskManager.setTask("Задача 2", "Текст задачи 2", TaskState.IN_PROGRESS);
         taskManager.setTask("Задача 3", "Текст задачи 3", TaskState.DONE);
@@ -36,6 +35,7 @@ public class Main {
         Epic epic1 = new Epic(taskManager.getEpic(4));
         epic1.setName("Эпик 4(обновленный)");
         epic1.setDescription("Текст эпика 1 (обновленный)");
+
         taskManager.updateEpic(4, epic1);
         Epic epic2 = new Epic(taskManager.getEpic(5));
         epic2.setName("Эпик 5(обновленный)");
@@ -56,15 +56,18 @@ public class Main {
         subtask2.setName("Подзадача 11 (обновление статуса)");
         subtask2.setState(TaskState.IN_PROGRESS);
         taskManager.updateSubtask(11, subtask2);
-        //for (int i = 0; i < 8; i++){
-        //    taskManager.getEpic(4);
-        //}
+        for (int i = 0; i < 8; i++) {
+            taskManager.getEpic(4);
+        }
         taskManager.getEpic(9);
         taskManager.getTask(2);
         taskManager.getTask(2);
-        taskManager.getTask(1);
+        taskManager.getTask(1);*/
         //taskManager.clearEpicList();
         //taskManager.clearSubtaskList();
+        //taskManager.setTask("Задача 12", "Текст задачи 12", TaskState.NEW);
+
+
 
         while (true) {
             printMenu();
@@ -73,7 +76,6 @@ public class Main {
             String command = scanner.next();
             switch (command) {
                 case "CREATE_TASK":
-                    System.out.println("Введите название задачи");
                     System.out.println("Введите название задачи");
                     name = scanner.next();
                     System.out.println("Введите текс задачи");

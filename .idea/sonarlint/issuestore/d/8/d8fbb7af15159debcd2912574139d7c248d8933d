@@ -1,25 +1,29 @@
 
 R
-java:S1066Ø"/Merge this if statement with the enclosing one.(®ØêÉûÿÿÿÿ8œ´°ŒÒ1
+java:S1066ã"/Merge this if statement with the enclosing one.(®ØêÉûÿÿÿÿ8˜·ã®å1
 ‡
-java:S1319"eThe type of "taskList" should be an interface such as "Map" rather than the implementation "HashMap".(ª¥úùÿÿÿÿ8´°ŒÒ1
+java:S1319"eThe type of "taskList" should be an interface such as "Map" rather than the implementation "HashMap".(ª¥úùÿÿÿÿ8˜·ã®å1
 …
-java:S1319"hThe type of "subtaskList" should be an interface such as "Map" rather than the implementation "HashMap".(¿Âû•8´°ŒÒ1
+java:S1319"hThe type of "subtaskList" should be an interface such as "Map" rather than the implementation "HashMap".(¿Âû•8˜·ã®å1
 ‡
-java:S1319"eThe type of "epicList" should be an interface such as "Map" rather than the implementation "HashMap".(í¾ù¡ûÿÿÿÿ8´°ŒÒ1
-
-java:S1319æ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(³„Ù¼8´°ŒÒ1
-|
-java:S1104"ZMake historyManager a static final constant or non-public and provide accessors if needed.(»û…èÿÿÿÿÿ8´°ŒÒ1
+java:S1319"eThe type of "epicList" should be an interface such as "Map" rather than the implementation "HashMap".(í¾ù¡ûÿÿÿÿ8˜·ã®å1
+w
+java:S1104"ZMake historyManager a static final constant or non-public and provide accessors if needed.(ãŒÒö8™·ã®å1
 r
-java:S1104"UMake counterId a static final constant or non-public and provide accessors if needed.(ĞŞ 8´°ŒÒ1
+java:S1104"UMake counterId a static final constant or non-public and provide accessors if needed.(ĞŞ 8™·ã®å1
 v
-java:S1104"TMake taskList a static final constant or non-public and provide accessors if needed.(ª¥úùÿÿÿÿ8´°ŒÒ1
+java:S1104"TMake taskList a static final constant or non-public and provide accessors if needed.(ª¥úùÿÿÿÿ8™·ã®å1
 t
-java:S1104"WMake subtaskList a static final constant or non-public and provide accessors if needed.(¿Âû•8´°ŒÒ1
+java:S1104"WMake subtaskList a static final constant or non-public and provide accessors if needed.(¿Âû•8™·ã®å1
 v
-java:S1104"TMake epicList a static final constant or non-public and provide accessors if needed.(í¾ù¡ûÿÿÿÿ8´°ŒÒ1
+java:S1104"TMake epicList a static final constant or non-public and provide accessors if needed.(í¾ù¡ûÿÿÿÿ8™·ã®å1
+Q
+java:S1444"4Make this "public static historyManager" field final(ãŒÒö8™·ã®å1
+M
+java:S3010"+Remove this assignment of "historyManager".(±ğúÿÿÿÿ8İ·ã®å1
+W
+java:S2209"5Change this instance-reference to a static reference.(±ğúÿÿÿÿ8İ·ã®å1
 V
-java:S2864v"4Iterate over the "entrySet" instead of the "keySet".(¾Ù ”üÿÿÿÿ8¶µ°ŒÒ1
+java:S2864z"4Iterate over the "entrySet" instead of the "keySet".(¾Ù ”üÿÿÿÿ8ä·ã®å1
 p
-java:S3776ñ"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ãˆ8Òµ°ŒÒ1
+java:S3776ü"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ãˆ8í·ã®å1
