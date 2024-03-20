@@ -75,3 +75,5 @@ I
 resources/tasks-test1.csv,4\a\4a1b8fd2323ab7100474812fbced0c884d681e71
 k
 ;src/ru/yandex/practicum/exception/ManagerSaveException.java,a\a\aac519a258a859c7ee533056fd448c4821afed2e
+l
+<src/ru/yandex/practicum/exceptions/ManagerSaveException.java,9\c\9cd7592102b9e826dc6577594954c62db2b859db

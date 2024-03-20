@@ -1,5 +1,6 @@
 package ru.yandex.practicum.managers.taskmanager;
 
+import ru.yandex.practicum.exceptions.ManagerSaveException;
 import ru.yandex.practicum.managers.historymanager.HistoryManager;
 import ru.yandex.practicum.tasks.Epic;
 import ru.yandex.practicum.tasks.Subtask;
@@ -25,39 +26,35 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
             try (FileReader reader = new FileReader(managerFileName); BufferedReader br = new BufferedReader(reader)) {
                 while (br.ready()) {
                     String line = br.readLine();
-                    if (numberOfLine != 0) {
-                        if (!line.equals("")) {
-                            String firstSymbolStr = String.valueOf(line.charAt(0));
-                            if (!firstSymbolStr.equals("#")) {
-                                Task task = csvTaskFormatted.fromString(line);
-                                int taskId = task.getId();
-                                if (task != null) {
-                                    if (task.getType().equals(TaskType.TASK)) {
-                                        taskList.put(taskId, task);
-                                    } else if (task.getType().equals(TaskType.SUBTASK)) {
-                                        subtaskList.put(taskId, (Subtask) task);
-                                    } else if (task.getType().equals(TaskType.EPIC)) {
-                                        epicList.put(taskId, (Epic) task);
-                                    }
+                    if (numberOfLine != 0 && !line.equals("")) {
+                        String firstSymbolStr = String.valueOf(line.charAt(0));
+                        if (!firstSymbolStr.equals("#")) {
+                            Task task = csvTaskFormatted.fromString(line);
+                            int taskId = task.getId();
+                            if (task != null) {
+                                if (task.getType().equals(TaskType.TASK)) {
+                                    taskList.put(taskId, task);
+                                } else if (task.getType().equals(TaskType.SUBTASK)) {
+                                    subtaskList.put(taskId, (Subtask) task);
+                                } else if (task.getType().equals(TaskType.EPIC)) {
+                                    epicList.put(taskId, (Epic) task);
                                 }
-                            } else {
-                                ArrayList<Integer> historyIdTasks = csvTaskFormatted.historyFromString(line);
-                                for (Integer taskId: historyIdTasks) {
-                                    if (taskList.containsKey(taskId)) {
-                                        Task task = taskList.get(taskId);
-                                        historyManager.add(task);
-                                    } else if (subtaskList.containsKey(taskId)) {
-                                        Subtask subtask = subtaskList.get(taskId);
-                                        historyManager.add(subtask);
-                                    } else if (epicList.containsKey(taskId)) {
-                                        Epic epic = epicList.get(taskId);
-                                        historyManager.add(epic);
-                                    }
+                            }
+                        } else {
+                            ArrayList<Integer> historyIdTasks = csvTaskFormatted.historyFromString(line);
+                            for (Integer taskId : historyIdTasks) {
+                                if (taskList.containsKey(taskId)) {
+                                    Task task = taskList.get(taskId);
+                                    historyManager.add(task);
+                                } else if (subtaskList.containsKey(taskId)) {
+                                    Subtask subtask = subtaskList.get(taskId);
+                                    historyManager.add(subtask);
+                                } else if (epicList.containsKey(taskId)) {
+                                    Epic epic = epicList.get(taskId);
+                                    historyManager.add(epic);
                                 }
                             }
                         }
-
-
                     }
                     numberOfLine++;
                 }
@@ -90,7 +87,7 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
             }
             fileWriter.write("#");
             ArrayList<Task> historyList = getHistory();
-            for (Task task: historyList) {
+            for (Task task : historyList) {
                 if (task != historyList.get(0)) {
                     fileWriter.write(",");
                 }
@@ -98,7 +95,7 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
                 fileWriter.write(Integer.toString(taskId));
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new ManagerSaveException("Ошибка при попытке сохранения состояния таск-менеджера в файл");
         }
     }
 

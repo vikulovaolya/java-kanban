@@ -17,23 +17,17 @@ public class CSVTaskFormatter {
     public Task fromString(String value) { //id,type,name,status,description,epic
         String[] taskParametres  = value.split(",");
         int taskId = 0;
-        TaskState taskState;
         try {
             taskId = parseInt(taskParametres[0]);
         } catch (NumberFormatException  exp) {
             exp.getMessage();
         }
-        if (taskParametres[3].equals("NEW")) {
-            taskState = TaskState.NEW;
-        } else if (taskParametres[3].equals("IN_PROGRESS")) {
-            taskState = TaskState.IN_PROGRESS;
-        } else if (taskParametres[3].equals("DONE")) {
-            taskState = TaskState.DONE;
-        } else {
-            taskState = null;
-        }
-        if (taskParametres[1].equals("TASK")) {
-            Task newTask = new Task(taskId, taskParametres[2], taskParametres[4], taskState);
+        TaskType taskType = TaskType.valueOf(taskParametres[1]);
+        String taskName = taskParametres[2];
+        TaskState taskState = TaskState.valueOf(taskParametres[3]);
+        String taskDescription = taskParametres[4];
+        if (taskType.equals(TaskType.TASK)) {
+            Task newTask = new Task(taskId, taskName, taskDescription, taskState);
             return newTask;
         } else if (taskParametres[1].equals("SUBTASK")) {
             int epicId = 0;
@@ -42,10 +36,10 @@ public class CSVTaskFormatter {
             } catch (NumberFormatException  exp) {
                 exp.getMessage();
             }
-            Subtask newSubtask = new Subtask(taskId, taskParametres[2], taskParametres[4], taskState, epicId);
+            Subtask newSubtask = new Subtask(taskId, taskName, taskDescription, taskState, epicId);
             return newSubtask;
         } else if (taskParametres[1].equals("EPIC")) {
-            Epic epic = new Epic(taskId, taskParametres[2], taskParametres[4], taskState, null);
+            Epic epic = new Epic(taskId, taskName, taskDescription, taskState, null);
             return epic;
         } else {
             return null;
@@ -53,26 +47,14 @@ public class CSVTaskFormatter {
     }
 
     public String toString(Task task) { //id,type,name,status,description,epic
-        TaskType taskType = task.getType();
-        String taskStringType = null;
         int epicId = 0;
+        TaskType taskType = task.getType();
+        String taskStringType = taskType.toString();
         TaskState taskState = task.getState();
-        String taskStringState = null;
-        if (taskType.equals(TaskType.TASK)) {
-            taskStringType = "TASK";
-        } else if (taskType.equals(TaskType.SUBTASK)) {
-            taskStringType = "SUBTASK";
+        String taskStringState = taskState.toString();
+        if (taskType.equals(TaskType.SUBTASK)) {
             Subtask subtask = (Subtask) task;
             epicId = subtask.getEpicId();
-        } else if (taskType.equals(TaskType.EPIC)) {
-            taskStringType = "EPIC";
-        }
-        if (taskState.equals(taskState.NEW)) {
-            taskStringState = "NEW";
-        } else if (taskState.equals(taskState.IN_PROGRESS)) {
-            taskStringState = "IN_PROGRESS";
-        } else if (taskState.equals(taskState.DONE)) {
-            taskStringState = "DONE";
         }
          String taskString = task.getId() + "," + taskStringType + "," + task.getName() + "," + taskStringState + ","
                  + task.getDescription() + ",";

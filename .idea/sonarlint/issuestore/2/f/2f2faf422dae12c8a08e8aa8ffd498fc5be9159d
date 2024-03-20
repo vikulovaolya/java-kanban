@@ -9,6 +9,8 @@ java:S1192ƒ"Define a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ğ
 java:S1192•"‹Define a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ id Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸, ĞºĞ¾Ñ‚Ğ¾Ñ€ÑƒÑ Ñ…Ğ¾Ñ‚Ğ¸Ñ‚Ğµ ÑƒĞ´Ğ°Ğ»Ğ¸Ñ‚ÑŒ" 3 times.(ê‹ÌÚ8ÓÅ÷´å1
 –
 java:S1192¦"xDefine a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ½Ğ¾Ğ²Ğ¾Ğµ Ğ½Ğ°Ğ·Ğ²Ğ°Ğ½Ğ¸Ğµ Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸" 3 times.(ÍÊ€ª8ÓÅ÷´å1
+D
+java:S2189H""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8ÿ…ıáå1
 ]	java:S125"<This block of commented-out lines of code should be removed.(æ¿ñÿûÿÿÿÿ8å°÷´å1
 W	java:S125B"<This block of commented-out lines of code should be removed.(´´(8Ç÷´å1
 C	java:S131M""Add a default case to this switch.(¸ìù«üÿÿÿÿ8Ç÷´å1
